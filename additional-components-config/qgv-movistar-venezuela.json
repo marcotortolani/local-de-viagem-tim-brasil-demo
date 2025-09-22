@@ -1,0 +1,20 @@
+{
+  "game": {
+    "title": "",
+    "bannerMobile": "",
+    "bannerDesktop": "",
+    "url": "",
+    "validPeriod": {
+      "startDate": "2025-02-17 00:00:00",
+      "endDate": "2025-02-24 23:59:59"
+    }
+  },
+  "additionalSection": {
+    "show": false,
+    "title": "",
+    "flag":"https://flagsapi.com/VE/flat/64.png",
+    "wp-category-slug": "",
+    "wp-category-id": 0
+  },
+  "validatorActive": false
+}

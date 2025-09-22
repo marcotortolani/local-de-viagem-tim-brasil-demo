@@ -1,0 +1,88 @@
+{
+  "name": "local-de-viagem",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev & npx next-video sync -w",
+    "dev:test": "NEXT_PUBLIC_OPERATOR_COUNTRY=test next dev -p 3600",
+    "dev:tim-brasil": "NEXT_PUBLIC_OPERATOR_COUNTRY=tim-brasil next dev -p 3601",
+    "build": "next build",
+    "build:test": "NEXT_PUBLIC_OPERATOR_COUNTRY=test NEXT_DIST_DIR=.next-test next build",
+    "build:tim-brasil": "NEXT_PUBLIC_OPERATOR_COUNTRY=tim-brasil NEXT_DIST_DIR=.next-tim-brasil next build",
+    "build:prod": "pnpm run build:tim-brasil",
+    "build:all": "pnpm run build:test && pnpm run build:tim-brasil",
+    "start": "next start",
+    "start:test": "NEXT_PUBLIC_OPERATOR_COUNTRY=test NEXT_DIST_DIR=.next-test next start -p 3600",
+    "start:tim-brasil": "NEXT_PUBLIC_OPERATOR_COUNTRY=tim-brasil next start -p 3601",
+    "lint": "eslint .",
+    "prepare": "husky",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-dropdown-menu": "^2.1.4",
+    "@radix-ui/react-navigation-menu": "^1.2.1",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.2.7",
+    "@u-wave/react-vimeo": "^0.9.11",
+    "axios": "^1.7.9",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "googleapis": "^154.0.0",
+    "html-to-text": "^9.0.5",
+    "lottie-react": "^2.4.0",
+    "lucide-react": "^0.460.0",
+    "motion": "^12.5.0",
+    "next": "15.0.2",
+    "next-crypto": "^1.0.8",
+    "next-video": "^1.3.3",
+    "node-html-parser": "^6.1.13",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-confetti": "^6.4.0",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react-player": "^2.16.0",
+    "react-share": "^5.1.2",
+    "react-window": "^1.8.10",
+    "swiper": "^11.1.15",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "use-sound": "^5.0.0",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/html-to-text": "^9.0.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-window": "^1.8.8",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.0.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

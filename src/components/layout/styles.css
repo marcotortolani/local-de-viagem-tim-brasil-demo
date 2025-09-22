@@ -1,0 +1,32 @@
+
+
+.swiper-pagination-bullet {
+    background: #ffffff99;
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: transparent !important;
+    width: 32px !important;
+    border-radius: 1rem !important;
+    border: 2px solid #FFCC5C !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+}
+
+.swiper-pagination-bullets {
+    /* top: 1rem; */
+    position: absolute !important;
+    bottom: 4rem !important;
+}
+
+@media (max-width: 475px){
+    .swiper-pagination-bullets {
+        bottom: 3rem !important;
+    }
+}

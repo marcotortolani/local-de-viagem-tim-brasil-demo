@@ -1,0 +1,12 @@
+.next/*
+*.css
+esm/*
+public/*
+tests/*
+scripts/*
+node_modules
+coverage
+.next
+.eslintrc.json
+docs/*
+*.config.ts
