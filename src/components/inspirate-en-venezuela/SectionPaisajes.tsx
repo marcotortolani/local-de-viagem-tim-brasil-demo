@@ -70,7 +70,7 @@ export function SectionPaisajes({ parentSlug }: Props) {
     //setLoading(true)
     const getPosts = async () => {
       const regionesDestacadas = await getWpPosts({
-        categories: CATEGORIES['inspirate-en-venezuela'].toString(),
+        categories: CATEGORIES['inspired-by'].toString(),
         per_page: 10,
         tags: convertTagsToString({ tagsSelected }),
       })

@@ -18,11 +18,11 @@ import { Pagination } from '../pagination/Pagination'
 //import SeeMore from '../ui/see-more'
 import Image from 'next/image'
 
-const ITEMS_GRID_ITINERARIOS = {
-  video: '/videos/grid-itinerarios/itinerarios-video.mp4',
-  videoFrame: '/images/grid-itinerarios/itinerarios-video-preview.webp',
-  imageH: '/images/grid-itinerarios/itinerarios-horizontal-grid.webp',
-  imageV: '/images/grid-itinerarios/itinerarios-vertical-grid.webp',
+const ITEMS_GRID_ITINERARIES = {
+  video: '/videos/grid-itineraries/itineraries-video.mp4',
+  videoFrame: '/images/grid-itineraries/itineraries-video-preview.webp',
+  imageH: '/images/grid-itineraries/itineraries-horizontal-grid.webp',
+  imageV: '/images/grid-itineraries/itineraries-vertical-grid.webp',
 }
 
 type Props = {
@@ -31,7 +31,7 @@ type Props = {
 
 const PER_PAGE = 8
 
-export function SectionItinerarios({ parentSlug }: Props) {
+export function Sectionitineraries({ parentSlug }: Props) {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
   const [pages, setPages] = useState<number>(0)
@@ -76,15 +76,15 @@ export function SectionItinerarios({ parentSlug }: Props) {
   useEffect(() => {
     setLoading(true)
     const getPosts = async () => {
-      const itinerarios = await getWpPosts({
-        categories: CATEGORIES['itinerarios'].toString(),
+      const itineraries = await getWpPosts({
+        categories: CATEGORIES['itineraries'].toString(),
         per_page: PER_PAGE,
         tags: convertTagsToString({ tagsSelected }),
         offset: PER_PAGE * currentPage,
       })
-      setPosts(itinerarios.posts || [])
+      setPosts(itineraries.posts || [])
       setLoading(false)
-      setPages(itinerarios.totalPages)
+      setPages(itineraries.totalPages)
     }
     getPosts()
   }, [currentPage, tagsSelected])
@@ -121,7 +121,7 @@ export function SectionItinerarios({ parentSlug }: Props) {
     <section className="relative w-full bg-primary sm:pt-4 lg:pt-6 pb-28">
       <div className=" w-full md:px-4 lg:max-w-screen-xl mx-auto">
         <BannerGridVideo
-          items={ITEMS_GRID_ITINERARIOS}
+          items={ITEMS_GRID_ITINERARIES}
           videoPosition="bottom-right"
           colorLines="bg-primary"
           colorOutline="outline-primary"
@@ -133,7 +133,7 @@ export function SectionItinerarios({ parentSlug }: Props) {
                 Descubre
               </span>{' '}
               <span className=" italic font-normal font-oswald text-4xl xl:text-6xl lg:pb-2 xl:pb-4 text-white">
-                Itinerarios
+                itineraries
               </span>
             </h2>
           </div>
@@ -185,7 +185,7 @@ export function SectionItinerarios({ parentSlug }: Props) {
           <Separator className=" w-full shrink bg-white/80" />
           {/* <SeeMore
             text="Ver más"
-            moreLink="/inspirate-en-venezuela/itinerarios"
+            moreLink="/inspired-by/itineraries"
             className=" min-w-fit text-white border-white"
           /> */}
         </div>

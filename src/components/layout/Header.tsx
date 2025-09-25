@@ -13,9 +13,11 @@ import {
 import { Button } from '@/components/ui/button'
 import { RouteItem } from '@/lib/route/route-types'
 import { useLayoutSidebarStore } from '@/components/layout/layout-store'
-
 import { Heart, Menu } from 'lucide-react'
 import { SearchIcon } from '@/components/icons'
+
+import dictionary from '@/dictionary/lang.json'
+
 //import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 const urlLanding = process.env.NEXT_PUBLIC_LANDING_SUBSCRIPTION || '/'
 
@@ -30,49 +32,51 @@ const Header: React.FC = () => {
 
   const ROUTES: RouteItem[] = [
     {
-      title: 'Inicio',
+      title: dictionary['Home'],
       href: '/',
     },
     {
-      title: 'Inspírate en Venezuela',
-      href: '/inspirate-en-venezuela',
+      title: dictionary['Inspired By'],
+      href: '/inspired-by',
     },
     {
-      title: 'Por el Mundo',
-      href: '/por-el-mundo',
+      title: dictionary['Around the World'],
+      href: '/around-the-world',
     },
     {
-      title: 'Cultura y Paladar',
-      href: '/cultura-y-paladar',
+      title: dictionary['Culture and Flavor'],
+      href: '/culture-and-flavor',
     },
     {
-      title: 'Checklist',
+      title: dictionary['Checklist'],
       href: '/checklist',
     },
     {
+      title: dictionary['Shorts'],
       href: '/shorts',
-      title: 'Shorts',
     },
     {
-      title: 'Destinos del Mes',
-      href: '/destinos-del-mes',
+      title: dictionary['Destinations of the Month'],
+      href: '/destinations-of-the-month',
     },
     {
-      title: 'Suscríbete',
+      title: dictionary['Subscribe'],
       href: urlLanding,
     },
     {
       Icon: Heart,
-      href: '/favoritos',
+      href: '/favorites',
     },
     {
       Icon: SearchIcon,
-      href: '/busqueda',
+      href: '/search',
     },
   ]
 
   if (userEnabled) {
-    const index = ROUTES.findIndex((item) => item.title === 'Suscríbete')
+    const index = ROUTES.findIndex(
+      (item) => item.title === dictionary['Subscribe'],
+    )
     if (index !== -1) {
       ROUTES.splice(index, 1)
     }
@@ -111,7 +115,7 @@ const Header: React.FC = () => {
         <Logo />
         <Image
           className=" mt-4"
-          src="/images/bandera-venezuela.webp"
+          src="/images/brasil-flag.webp"
           alt="logo"
           width={60}
           height={42}
@@ -132,10 +136,12 @@ const Header: React.FC = () => {
                 <Link
                   href={href || '#'}
                   className={` ${title === 'Inicio' && ' hidden 2xl:flex '}  
-                  ${title === 'Suscríbete' && ' bg-secondary '}  
-                  ${href === '/destinos-del-mes' ? ' text-neutral-800 bg-neutral-300 ' : ' text-white bg-primary-light/50 '} z-20 relative group inline-flex w-max items-center justify-center rounded-full px-4 py-1 text-sm lg:text-[12px] xl:text-sm font-light fill-white hover:bg-primary transition-all duration-300 ease-in-out`}
+                  ${title === dictionary['Subscribe'] && ' bg-secondary '}  
+                  ${href === '/destinations-of-the-month' ? ' text-neutral-800 bg-neutral-300 ' : ' text-white bg-primary-light/50 '} z-20 relative group inline-flex w-max items-center justify-center rounded-full px-4 py-1 text-sm lg:text-[12px] xl:text-sm font-light fill-white hover:bg-primary transition-all duration-300 ease-in-out`}
                   prefetch
-                  target={title === 'Suscríbete' ? '_blank' : '_self'}
+                  target={
+                    title === dictionary['Subscribe'] ? '_blank' : '_self'
+                  }
                 >
                   {Icon ? (
                     <Icon className=" w-6 h-6 xl:w-6 xl:h-5 fill-[inherit] " />

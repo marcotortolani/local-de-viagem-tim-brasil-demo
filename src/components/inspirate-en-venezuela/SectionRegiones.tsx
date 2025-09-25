@@ -69,7 +69,7 @@ export const SectionRegiones: React.FC<Props> = ({ parentSlug = '' }) => {
     setLoading(true)
     const getPosts = async () => {
       const regionesDestacadas = await getWpPosts({
-        categories: CATEGORIES['inspirate-en-venezuela'].toString(),
+        categories: CATEGORIES['inspired-by'].toString(),
         per_page: PER_PAGE,
         tags: convertTagsToString({ tagsSelected }),
         offset: PER_PAGE * currentPage,

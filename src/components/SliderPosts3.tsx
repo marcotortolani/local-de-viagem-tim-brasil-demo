@@ -4,9 +4,9 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css/navigation'
-import '../app/(root)/(categories)/por-el-mundo/style.css'
+import '../app/(root)/(categories)/around-the-world/style.css'
 import { Post } from '@/lib/api/wp/wp-types'
-import { SquareCardDescription } from "./SquareCardDescription"
+import { SquareCardDescription } from './SquareCardDescription'
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from 'lucide-react'
 
 export const SliderPosts3 = ({

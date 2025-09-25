@@ -15,7 +15,7 @@ export const TravelerBanner: React.FC<TravelerBannerProps> = ({
   urlTravelerImage = '',
   urlLastPostImage = '',
   name = '',
-  // subtitle = 'Conocé a nuestros viajeros y acompañalos a recorrer diferentes culturas, costumbres, sabores, paisajes y mucho más!',
+  // subtitle = 'Conocé a nuestros travelers y acompañalos a recorrer diferentes culturas, costumbres, sabores, paisajes y mucho más!',
 }) => {
   return (
     <div className="relative w-full h-[210px] md:h-[500px] mb-4 overflow-hidden">

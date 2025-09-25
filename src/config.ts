@@ -9,30 +9,21 @@ interface Config {
 }
 
 export const buildConfigs: Record<string, Config> = {
-  'movistar-venezuela': {
-    apiUrl: 'http://content.es.ve.movistar.queguay.moob.club/',
-    prodUrl: 'http://ve.movistar.queguayviajes.com/',
-    landingSubscription:
-      'http://dinamic.ve.movistar.queguayviajes.com/landing/',
-    chatbot: 'https://test.moob.club:8005/IA/queguayviajes/chat/',
-    endpointAdditionalComponents:
-      'https://test.moob.club:8002/config-portales/qgv-movistar-venezuela.json',
+  'tim-brasil': {
+    apiUrl: 'http://content.br.tim.localdeviagem.moob.club/',
+    prodUrl: '/',
+    landingSubscription: '/subscribe',
+    chatbot:
+      'https://test.moob.club:8005/IA/br/tim/localdeviagem/chat/index.php',
+    endpointAdditionalComponents: '',
   },
   test: {
-    // apiUrl: 'http://content.test.queguay.moob.club/',
-    apiUrl: 'http://content.es.ve.movistar.queguay.moob.club/',
-    prodUrl: 'http://ve.movistar.queguayviajes.com/',
-    landingSubscription:
-      'http://dinamic.ve.movistar.queguayviajes.com/landing/',
-    chatbot: 'https://test.moob.club:8005/IA/queguayviajes/chat/',
-    endpointAdditionalComponents:
-      'https://test.moob.club:8002/config-portales/qgv-movistar-venezuela.json',
-    // apiUrl: 'http://content.test.queguay.moob.club',
-    // prodUrl: 'http://es.test.queguay.moob.club/',
-    // landingSubscription: '/',
-    // chatbot: 'https://test.moob.club:8005/IA/queguayviajes/chat/',
-    // endpointAdditionalComponents:
-    //   'https://test.moob.club:8002/config-portales/qgv-test.json',
+    apiUrl: 'http://content.test.br.tim.localdeviagem.moob.club/',
+    prodUrl: '/',
+    landingSubscription: '/subscribe',
+    chatbot:
+      'https://test.moob.club:8005/IA/br/tim/localdeviagem/chat/index.php',
+    endpointAdditionalComponents: '',
   },
 }
 

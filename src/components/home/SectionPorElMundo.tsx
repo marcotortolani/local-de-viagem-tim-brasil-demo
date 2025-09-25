@@ -7,10 +7,10 @@ import { VerticalCard } from '../VerticalCard'
 import Image from 'next/image'
 
 const ITEMS_GRID_POR_EL_MUNDO = {
-  video: '/videos/grid-por-el-mundo/por-el-mundo-video.mp4',
-  videoFrame: '/images/grid-por-el-mundo/por-el-mundo-video-preview.webp',
-  imageH: '/images/grid-por-el-mundo/por-el-mundo-horizontal-grid.webp',
-  imageV: '/images/grid-por-el-mundo/por-el-mundo-vertical-grid.webp',
+  video: '/videos/grid-por-el-mundo/around-the-world-video.mp4',
+  videoFrame: '/images/grid-por-el-mundo/around-the-world-video-preview.webp',
+  imageH: '/images/grid-por-el-mundo/around-the-world-horizontal-grid.webp',
+  imageV: '/images/grid-por-el-mundo/around-the-world-vertical-grid.webp',
 }
 
 export default async function SectionPorElMundo() {
@@ -43,7 +43,7 @@ export default async function SectionPorElMundo() {
               </span>
             </h2>
             <SeeMore
-              moreLink="/por-el-mundo"
+              moreLink="/around-the-world"
               text="Ver todo"
               className="px-4 py-0 lg:pb-1 font-oswald font-semibold text-base md:text-lg lg:text-xl text-white bg-primary-light rounded-full"
             />

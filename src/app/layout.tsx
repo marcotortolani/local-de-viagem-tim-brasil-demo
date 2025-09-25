@@ -10,7 +10,9 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './globals.css'
 import { ValidationProvider } from '@/providers/validation-provider'
-import GoogleAnalyticsLoader from '@/components/GoogleAnalyticsLoader'
+//import GoogleAnalyticsLoader from '@/components/GoogleAnalyticsLoader'
+
+import dictionary from '@/dictionary/lang.json'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,11 +31,11 @@ const oswald = Oswald({
 })
 
 export const metadata: Metadata = {
-  title: 'Que Guay Viajes | Tu sitio de viajes',
+  title: dictionary['title'],
   description: '',
   icons: '/favicon.ico',
   other: {
-    version: '1.4.3',
+    version: '1.4.4',
   },
 }
 
@@ -43,10 +45,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
-      <head>
+    <html lang={dictionary['lang']}>
+      {/* <head>
         <GoogleAnalyticsLoader />
-      </head>
+      </head> */}
       <body className={`${poppins.variable} ${oswald.variable} font-sans`}>
         <ValidationProvider>{children}</ValidationProvider>
       </body>

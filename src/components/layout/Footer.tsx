@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 
+import dictionary from '@/dictionary/lang.json'
+
 export const Footer = () => {
   const SOCIAL_ROUTES = [
     {
@@ -15,12 +17,12 @@ export const Footer = () => {
 
   const ROUTES = [
     {
-      title: 'Términos y condiciones',
-      path: '/terminos-y-condiciones',
+      title: dictionary['Terms and Conditions'],
+      path: '/terms',
     },
     {
-      title: 'Suscríbete',
-      path: '/suscribirme',
+      title: dictionary['Subscribe'],
+      path: '/subscribe',
     },
   ]
 
@@ -32,7 +34,7 @@ export const Footer = () => {
             <div className="relative mr-4 h-full ">
               <Image
                 className="relative h-full w-auto "
-                src="/images/logo-qgv-blanco.webp"
+                src="/images/logo-product-white.webp"
                 alt="logo Que Guay"
                 width={184}
                 height={56}

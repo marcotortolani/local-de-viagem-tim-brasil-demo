@@ -3,7 +3,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { validateUser } from '@/app/actions/auth'
 import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
-import useGameStore from '@/stores/memotest-state-store'
+
 
 const ValidationContext = createContext({
   userEnabled: null as boolean | null,
@@ -15,7 +15,7 @@ function ValidationProvider({ children }: { children: React.ReactNode }) {
   const { additionalConfig } = useAdditionalComponentsStore()
   const [userEnabled, setUserEnabled] = useState<boolean | null>(null)
   const [userID, setUserID] = useState<string>('')
-  const { setUserHashID } = useGameStore()
+  
   const [isValidationLoading, setIsValidationLoading] = useState(true)
 
   const getParamHashID = () => {
@@ -36,13 +36,13 @@ function ValidationProvider({ children }: { children: React.ReactNode }) {
         const res = await validateUser(hashID)
         setUserEnabled(res.userSubscribed)
         setUserID(res.hashID || '')
-        setUserHashID(res.hashID || '')
+        
       } catch (error) {
         console.error('Error validating user:', error)
         // En caso de error, asumir usuario no habilitado
         setUserEnabled(false)
         setUserID('')
-        setUserHashID('')
+        
       } finally {
         setIsValidationLoading(false)
       }

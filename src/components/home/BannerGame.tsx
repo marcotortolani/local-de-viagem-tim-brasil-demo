@@ -76,7 +76,7 @@ export function BannerGame() {
       return
     }
     if (!userEnabled) {
-      router.push('/suscribirme')
+      router.push('/subscribe')
       return
     }
     if (!userHash) {

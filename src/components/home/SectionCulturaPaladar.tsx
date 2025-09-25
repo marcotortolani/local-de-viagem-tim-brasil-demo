@@ -5,15 +5,16 @@ import { getWpPosts } from '@/lib/api/wp/wp-actions'
 import { CATEGORIES } from '@/lib/constants'
 import { VerticalCard } from '../VerticalCard'
 import Image from 'next/image'
-import { SliderVerticalPosts2 } from '../inspirate-en-venezuela/SliderVerticalPosts2'
+import { SliderVerticalPosts2 } from '../inspired-by/SliderVerticalPosts2'
 
 const ITEMS_GRID_PAISAJES = {
-  video: '/videos/grid-cultura-y-paladar/cultura-y-paladar-video.mp4',
+  video: '/videos/grid-cultura-y-paladar/culture-and-flavor-video.mp4',
   videoFrame:
-    '/images/grid-cultura-y-paladar/cultura-y-paladar-preview-video.webp',
+    '/images/grid-cultura-y-paladar/culture-and-flavor-preview-video.webp',
   imageH:
-    '/images/grid-cultura-y-paladar/cultura-y-paladar-horizontal-grid.webp',
-  imageV: '/images/grid-cultura-y-paladar/cultura-y-paladar-vertical-grid.webp',
+    '/images/grid-cultura-y-paladar/culture-and-flavor-horizontal-grid.webp',
+  imageV:
+    '/images/grid-cultura-y-paladar/culture-and-flavor-vertical-grid.webp',
 }
 
 export default async function SectionCulturaPaladar() {
@@ -47,7 +48,7 @@ export default async function SectionCulturaPaladar() {
               </span>
             </h2>
             <SeeMore
-              moreLink="/cultura-y-paladar"
+              moreLink="/culture-and-flavor"
               text="Ver todo"
               className="px-4 py-0 lg:pb-1 font-oswald font-normal text-base md:text-lg lg:text-xl text-white bg-tertiary rounded-full"
             />

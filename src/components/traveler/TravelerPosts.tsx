@@ -47,7 +47,7 @@ export const TravelerPosts: React.FC<Props> = ({ category }) => {
       <Container className=" px-0 lg:px-6 xl:px-3 min-h-fit">
         <SectionGridPagination
           category={category}
-          parentSlug={`inspirate-en-venezuela/viajeros`}
+          parentSlug={`inspired-by/travelers`}
         />
       </Container>
     </main>

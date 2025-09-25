@@ -4,7 +4,7 @@ import React from 'react'
 import { TrialProvider } from '@/providers/trial-provider'
 
 // Descomentar para permitir uso libre en TEST
-// const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
+const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
 
 export default function TrialLayout({
   children,
@@ -12,7 +12,7 @@ export default function TrialLayout({
   children: React.ReactNode
 }>) {
   // Descomentar para permitir uso libre en TEST
-  // if (operatorCountry === 'test') return <>{children}</>
+  if (operatorCountry === 'test') return <>{children}</>
 
   return <TrialProvider>{children}</TrialProvider>
 }

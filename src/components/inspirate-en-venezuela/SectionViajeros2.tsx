@@ -19,12 +19,12 @@ type Props = {
 
 const PER_PAGE = 12
 
-export const SectionViajeros2: React.FC<Props> = () => {
+export const SectionTravelers2: React.FC<Props> = () => {
   const [loading, setLoading] = useState(true)
   const [pages, setPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(0)
   const [featuredTravelers, setFeaturedTravelers] = useState<Category[]>([])
-  const [viajeros, setViajeros] = useState<Category[]>([])
+  const [travelers, settravelers] = useState<Category[]>([])
 
   useEffect(() => {
     setLoading(true)
@@ -32,26 +32,26 @@ export const SectionViajeros2: React.FC<Props> = () => {
     if (!featuredTravelers.length) {
       const getFeaturedTravelers = async () => {
         const { categories } = await getWpCategories({
-          parent: CATEGORIES['viajeros'],
+          parent: CATEGORIES['travelers'],
           per_page: 100,
         })
 
-        const viajerosFeatured = categories.filter(
+        const travelersFeatured = categories.filter(
           (category: Category) => category?.featured === true,
         )
-        setFeaturedTravelers(viajerosFeatured)
+        setFeaturedTravelers(travelersFeatured)
       }
       getFeaturedTravelers()
     }
 
     const getCategories = async () => {
       const { categories, totalPages } = await getWpCategories({
-        parent: CATEGORIES['viajeros'],
+        parent: CATEGORIES['travelers'],
         per_page: PER_PAGE,
         page: currentPage + 1,
       })
-      
-      setViajeros(categories)
+
+      settravelers(categories)
       setLoading(false)
       setPages(totalPages)
     }
@@ -68,9 +68,9 @@ export const SectionViajeros2: React.FC<Props> = () => {
     </div>
   ) : (
     <div className=" mb-4 lg:mb-6 xl:mb-10 pt-2">
-      {viajeros?.length ? (
+      {travelers?.length ? (
         <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-5 xl:gap-8">
-          {viajeros.map((item, key) => (
+          {travelers.map((item, key) => (
             <TravelerItem category={item} key={key} />
           ))}
         </div>
@@ -112,7 +112,7 @@ const TravelerItem = ({ category }: { category: Category }) => {
   const name = category?.name?.replaceAll('-', ' ')
 
   return (
-    <Link href={`/inspirate-en-venezuela/viajeros/${category?.slug}`} prefetch>
+    <Link href={`/inspired-by/travelers/${category?.slug}`} prefetch>
       <div className="w-full h-full flex flex-col items-center gap-2">
         <div
           className={`relative w-full aspect-square overflow-hidden border-2 xl:border-4 border-solid border-white rounded-full `}

@@ -66,7 +66,7 @@ export const SectionTabs: React.FC<Props> = ({ categories }) => {
             <EditorialItem
               item={item}
               key={key}
-              url={`/cultura-y-paladar/${item.slug}`}
+              url={`/culture-and-flavor/${item.slug}`}
             />
           ))}
         </div>

@@ -16,7 +16,7 @@ export const EditorialCarouselSectionItem: React.FC<
 
   return (
     <div className="flex justify-center flex-col w-auto">
-      <Link href={`/contenido/editorial/${item?.slug}`} prefetch>
+      <Link href={`/content/editorial/${item?.slug}`} prefetch>
         <div className="relative mb-2  h-[140px] w-full  md:h-[300px] lg:h-[350px]">
           <Image
             className="rounded-[5px]"
@@ -29,7 +29,7 @@ export const EditorialCarouselSectionItem: React.FC<
           />
         </div>
       </Link>
-      <Link href={`/contenido/editorial/${item?.slug}`} prefetch>
+      <Link href={`/content/editorial/${item?.slug}`} prefetch>
         <div className="text-white text-[11px] md:text-[16px] font-medium whitespace-pre-line text-left">
           {item?.title?.rendered}
         </div>

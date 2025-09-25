@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { motion } from 'motion/react'
 import { usePathname } from 'next/navigation'
 
+import dictionary from '@/dictionary/lang.json'
+
 const URL_CHATBOT = process.env.NEXT_PUBLIC_URL_CHATBOT
 
 export const Chatbot = () => {
@@ -70,7 +72,7 @@ export const Chatbot = () => {
             />
           </div>
           <p className=" hidden md:block w-full text-balance font-poppins font-light text-base leading-5 text-white">
-            ¡Habla con nuestro asistente de viajes!
+            {dictionary['Chat with our travel assistant!']}
           </p>
         </button>
       </div>

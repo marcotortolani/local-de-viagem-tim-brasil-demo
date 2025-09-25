@@ -15,13 +15,13 @@ import { getWpPosts } from '@/lib/api/wp/wp-actions'
 import { SkeletonCard, VerticalCard } from '@/components/VerticalCard'
 
 import { Pagination } from '../pagination/Pagination'
-import { Separator } from "../ui/separator"
+import { Separator } from '../ui/separator'
 
 const ITEMS_GRID_POR_EL_MUNDO = {
-  video: '/videos/grid-por-el-mundo/por-el-mundo-video.mp4',
-  videoFrame: '/images/grid-por-el-mundo/por-el-mundo-video-preview.webp',
-  imageH: '/images/grid-por-el-mundo/por-el-mundo-horizontal-grid.webp',
-  imageV: '/images/grid-por-el-mundo/por-el-mundo-vertical-grid.webp',
+  video: '/videos/grid-por-el-mundo/around-the-world-video.mp4',
+  videoFrame: '/images/grid-por-el-mundo/around-the-world-video-preview.webp',
+  imageH: '/images/grid-por-el-mundo/around-the-world-horizontal-grid.webp',
+  imageV: '/images/grid-por-el-mundo/around-the-world-vertical-grid.webp',
 }
 
 type Props = {
@@ -75,15 +75,15 @@ export function SectionRecorriendoElMundo({ parentSlug }: Props) {
   useEffect(() => {
     setLoading(true)
     const getPosts = async () => {
-      const itinerarios = await getWpPosts({
+      const itineraries = await getWpPosts({
         categories: CATEGORIES['recorriendo-el-mundo'].toString(),
         per_page: PER_PAGE,
         tags: convertTagsToString({ tagsSelected }),
         offset: PER_PAGE * currentPage,
       })
-      setPosts(itinerarios.posts || [])
+      setPosts(itineraries.posts || [])
       setLoading(false)
-      setPages(itinerarios.totalPages)
+      setPages(itineraries.totalPages)
     }
     getPosts()
   }, [currentPage, tagsSelected])

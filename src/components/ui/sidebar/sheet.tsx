@@ -166,8 +166,6 @@ const SheetUI: React.FC<SheetUIProps> = ({
   items = [],
   footer,
 }) => {
-
-  
   return (
     <Sheet key={side} open={open} onOpenChange={onOpenChange}>
       <SheetContent
@@ -235,11 +233,11 @@ const SheetUI: React.FC<SheetUIProps> = ({
                     href={href || '#'}
                     onClick={() => onOpenChange && onOpenChange(false)}
                     className={cn(
-                      ` ${href.includes('/memotest') ? ' text-primary ' : ''} flex items-center rounded-none py-1  border-t border-t-white/50  text-white/80`,
+                      `  flex items-center rounded-none py-1  border-t border-t-white/50  text-white/80`,
                       sidebarMenuItemClassName,
                     )}
                   >
-                    <span className={`${href.includes('/memotest') ? ' text-primary-light ' : ''} py-2 text-[16px] font-light leading-6`}>
+                    <span className={` py-2 text-[16px] font-light leading-6`}>
                       {title}
                     </span>
                   </Link>

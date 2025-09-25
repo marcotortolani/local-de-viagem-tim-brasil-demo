@@ -4,8 +4,7 @@ import { useRouter } from 'next/navigation'
 import { ValidationContext } from '@/providers/validation-provider'
 import Image from 'next/image'
 
-const urlLanding =
-  process.env.NEXT_PUBLIC_LANDING_SUBSCRIPTION || '/suscribirme'
+const urlLanding = process.env.NEXT_PUBLIC_LANDING_SUBSCRIPTION || '/subscribe'
 
 export default function BannerSuscription() {
   const { userEnabled } = useContext(ValidationContext)
@@ -38,7 +37,7 @@ export default function BannerSuscription() {
         <div className="z-20 w-full h-full p-2 bg-gradient-to-b from-black/20 via-black/40 to-black/60 flex items-center justify-center gap-4 md:gap-6 rounded-lg lg:rounded-xl xl:rounded-3xl ">
           <Image
             className=" w-1/4 min-w-16 md:h-20 md:w-auto xl:h-24 "
-            src="/images/logo-square-qgv-blanco-2.webp"
+            src="/images/logo-product-white.webp"
             alt="Logo Que Guay Viajes"
             width={61}
             height={43}

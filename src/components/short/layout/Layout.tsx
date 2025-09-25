@@ -9,7 +9,7 @@ import { RouteItem } from '@/lib/route/route-types'
 import { MobileHeader } from '@/components/layout/MobileHeader'
 import { Heart } from 'lucide-react'
 import { SearchIcon } from '@/components/icons'
-import useMemotestConfigStore from '@/stores/memotest-config-store'
+
 // import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
 type LayoutProps = {
@@ -19,17 +19,9 @@ type LayoutProps = {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const pathname = usePathname()
   const { open, closeDialog } = useLayoutSidebarStore()
-  const { validPeriod } = useMemotestConfigStore()
+
   //const { additionalConfig } = useAdditionalComponentsStore()
   //const { additionalSection } = additionalConfig
-
-  const currentDate = new Date()
-
-  const isBetweenDates = (startDate: string, endDate: string) => {
-    const start = new Date(startDate)
-    const end = new Date(endDate)
-    return currentDate >= start && currentDate <= end
-  }
 
   const ROUTES: RouteItem[] = [
     {
@@ -38,15 +30,15 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     },
     {
       title: 'Inspírate en Venezuela',
-      href: '/inspirate-en-venezuela',
+      href: '/inspired-by',
     },
     {
       title: 'Por el Mundo',
-      href: '/por-el-mundo',
+      href: '/around-the-world',
     },
     {
       title: 'Cultura y Paladar',
-      href: '/cultura-y-paladar',
+      href: '/culture-and-flavor',
     },
     {
       title: 'Checklist',
@@ -58,28 +50,21 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     },
     {
       title: 'Destinos del Mes',
-      href: '/destinos-del-mes',
+      href: '/destinations-of-the-month',
     },
     {
       Icon: Heart,
       title: 'Favoritos',
-      href: '/favoritos',
+      href: '/favorites',
     },
     {
       Icon: SearchIcon,
       title: 'Busqueda',
-      href: '/busqueda',
+      href: '/search',
     },
   ]
 
   const MOBILE_ROUTES = [...ROUTES]
-
-  if (isBetweenDates(validPeriod.startDate, validPeriod.endDate)) {
-    MOBILE_ROUTES.splice(1, 0, {
-      title: 'Juega al Memotest',
-      href: '/memotest',
-    })
-  }
 
   // if (additionalSection && additionalSection?.show) {
   //   ROUTES.splice(2, 0, {

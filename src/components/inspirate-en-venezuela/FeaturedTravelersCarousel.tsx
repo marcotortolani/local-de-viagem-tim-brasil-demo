@@ -22,7 +22,6 @@ type TravelerCarouselSectionProps = {
 export const FeaturedTravelersCarousel: React.FC<
   TravelerCarouselSectionProps
 > = ({ items = [], pagination, navigation }) => {
-  
   return (
     <Swiper
       className="relative h-full w-full mb-4 px-4 lg:px-8 pb-10"
@@ -88,7 +87,7 @@ export const FeaturedTravelerItem = ({ category }: { category: Category }) => {
   const name = category?.name?.replaceAll('-', ' ')
 
   return (
-    <Link href={`/inspirate-en-venezuela/viajeros/${category?.slug}`} prefetch>
+    <Link href={`/inspired-by/travelers/${category?.slug}`} prefetch>
       <div className="w-full h-full flex flex-col items-center gap-2">
         <div
           className={`relative w-full aspect-[5/6] overflow-hidden border-2 lg:border-4 border-solid border-tertiary rounded-3xl `}

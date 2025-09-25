@@ -7,23 +7,14 @@ import { MenuFooter } from '@/components/layout/MenuFooter'
 import { RouteItem } from '@/lib/route/route-types'
 
 import { useLayoutSidebarStore } from './layout-store'
-import useMemotestConfigStore from '@/stores/memotest-config-store'
 //import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
 export default function SidebarMenu(): React.ReactNode {
   const pathname = usePathname()
   const { open, closeDialog } = useLayoutSidebarStore()
-  const { validPeriod } = useMemotestConfigStore()
+
   //const { additionalConfig } = useAdditionalComponentsStore()
   //const { additionalSection } = additionalConfig
-
-  const currentDate = new Date()
-
-  const isBetweenDates = (startDate: string, endDate: string) => {
-    const start = new Date(startDate)
-    const end = new Date(endDate)
-    return currentDate >= start && currentDate <= end
-  }
 
   const MOBILE_ROUTES: RouteItem[] = [
     {
@@ -32,15 +23,15 @@ export default function SidebarMenu(): React.ReactNode {
     },
     {
       title: 'Inspírate en Venezuela',
-      href: '/inspirate-en-venezuela',
+      href: '/inspired-by',
     },
     {
       title: 'Por el Mundo',
-      href: '/por-el-mundo',
+      href: '/around-the-world',
     },
     {
       title: 'Cultura y Paladar',
-      href: '/cultura-y-paladar',
+      href: '/culture-and-flavor',
     },
     {
       title: 'Checklist',
@@ -48,10 +39,10 @@ export default function SidebarMenu(): React.ReactNode {
     },
     {
       title: 'Destinos del Mes',
-      href: '/destinos-del-mes',
+      href: '/destinations-of-the-month',
     },
     {
-      href: '/favoritos',
+      href: '/favorites',
       title: 'Favoritos',
     },
     {
@@ -59,17 +50,10 @@ export default function SidebarMenu(): React.ReactNode {
       title: 'Shorts',
     },
     {
-      href: '/busqueda',
+      href: '/search',
       title: 'Búsqueda',
     },
   ]
-
-  if (isBetweenDates(validPeriod.startDate, validPeriod.endDate)) {
-    MOBILE_ROUTES.splice(1, 0, {
-      title: 'Juega al Memotest',
-      href: '/memotest',
-    })
-  }
 
   // if (additionalSection && additionalSection?.show) {
   //   MOBILE_ROUTES.splice(2, 0, {

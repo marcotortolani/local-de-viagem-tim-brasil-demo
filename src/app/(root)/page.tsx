@@ -5,22 +5,21 @@ import { getWpCategories, getWpPosts } from '@/lib/api/wp/wp-actions'
 import { Category } from '@/lib/api/wp/wp-types'
 
 import { CATEGORIES } from '@/lib/constants'
-import { SectionInspirateVenezuela } from '@/components/home/SectionInspirateVenezuela'
+import { SectionInspiredBy } from '@/components/home/SectionInspiredBy'
 import { ShortCarousel } from '@/components/short/ShortCarousel'
 import SectionPorElMundo from '@/components/home/SectionPorElMundo'
 import SectionCulturaPaladar from '@/components/home/SectionCulturaPaladar'
 import SectionChecklist from '@/components/home/SectionChecklist'
-import { BannerGameMemotest } from '@/components/home/BannerGameMemotest'
 
 export default async function Page() {
   const { categories } = await getWpCategories({ per_page: 100 })
 
-  const inspirate_venezuela = await getWpPosts({
-    categories: CATEGORIES['inspirate-en-venezuela'].toString(),
+  const inspired_by = await getWpPosts({
+    categories: CATEGORIES['inspired-by'].toString(),
   })
 
-  const viajeros = categories.filter(
-    (category: Category) => category.parent === CATEGORIES['viajeros'],
+  const travelers = categories.filter(
+    (category: Category) => category.parent === CATEGORIES['travelers'],
   )
 
   const shorts = await getWpPosts({
@@ -31,7 +30,7 @@ export default async function Page() {
   // const slides = [
   //   ...mergePostCategories(por_el_mundo.posts, categories).slice(0, 1),
   //   ...mergePostCategories(checklists.posts, categories).slice(0, 1),
-  //   ...mergePostCategories(inspirate_venezuela.posts, categories).slice(0, 1),
+  //   ...mergePostCategories(inspired_by.posts, categories).slice(0, 1),
   //   ...mergePostCategories(sabores_del_mundo.posts, categories).slice(0, 1),
   // ]
 
@@ -39,16 +38,14 @@ export default async function Page() {
     <div className="relative md:mt-[6rem] ">
       <div className=" -mb-1 ">
         <CarouselHome
-          posts={inspirate_venezuela?.posts || []}
+          posts={inspired_by?.posts || []}
           categories={categories}
         />
       </div>
 
-      <BannerGameMemotest />
-
-      <SectionInspirateVenezuela
-        posts={inspirate_venezuela.posts}
-        viajeros={viajeros.slice(0, 12)}
+      <SectionInspiredBy
+        posts={inspired_by.posts}
+        travelers={travelers.slice(0, 12)}
       />
 
       {/* Shorts */}

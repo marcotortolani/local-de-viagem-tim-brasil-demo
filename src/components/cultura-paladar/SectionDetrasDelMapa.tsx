@@ -33,14 +33,14 @@ export function SectionDetrasDelMapa({ parentSlug }: Props) {
   useEffect(() => {
     setLoading(true)
     const getPosts = async () => {
-      const itinerarios = await getWpPosts({
+      const itineraries = await getWpPosts({
         categories: CATEGORIES['detras-del-mapa'].toString(),
         per_page: PER_PAGE,
         offset: PER_PAGE * currentPage,
       })
-      setPosts(itinerarios.posts || [])
+      setPosts(itineraries.posts || [])
       setLoading(false)
-      setPages(itinerarios.totalPages)
+      setPages(itineraries.totalPages)
     }
     getPosts()
   }, [currentPage])
@@ -96,7 +96,6 @@ export function SectionDetrasDelMapa({ parentSlug }: Props) {
           </div>
         </BannerGridVideo>
       </div>
-    
 
       <Separator className=" w-5/6 lg:w-full max-w-screen-lg mx-auto my-4 xl:mt-6 xl:mb-10 bg-white/80" />
 

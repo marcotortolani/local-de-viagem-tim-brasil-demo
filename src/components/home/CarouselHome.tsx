@@ -183,7 +183,7 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
                     </div>
 
                     <Link
-                      href={`/contenido/${postType}/${slug}`}
+                      href={`/content/${postType}/${slug}`}
                       prefetch
                       className="w-fit py-1 px-6 lg:ml-6 mt-6 lg:mt-8 uppercase inline-flex items-center justify-center rounded-full font-semibold text-lg bg-tertiary text-black hover:bg-tertiary-dark transition-all duration-300 ease-in-out"
                     >

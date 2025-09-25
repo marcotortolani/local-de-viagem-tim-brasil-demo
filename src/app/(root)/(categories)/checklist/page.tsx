@@ -39,7 +39,7 @@ export default async function Page() {
                 Desde consejos para empacar hasta recomendaciones para explorar
                 nuevos lugares.{' '}
                 <span className=" not-italic font-normal">
-                  Descubre los secretos mejor guardados de los viajeros
+                  Descubre los secretos mejor guardados de los travelers
                   experimentados.
                 </span>
               </p>

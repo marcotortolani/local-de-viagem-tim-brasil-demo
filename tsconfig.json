@@ -31,6 +31,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    ".next-digitel-venezuela/types/**/*.ts",
     ".next-movistar-espana/types/**/*.ts",
     ".next-movistar-venezuela/types/**/*.ts",
     ".next-personal-paraguay/types/**/*.ts",
@@ -38,7 +39,7 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     "video.d.ts",
-    ".next-digitel-venezuela/types/**/*.ts"
+    ".next-tim-brasil/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

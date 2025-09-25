@@ -4,12 +4,12 @@ import { TravelerCarousel } from './TravelerCarousel'
 import { getWpCategories } from '@/lib/api/wp/wp-actions'
 import { Category } from '@/lib/api/wp/wp-types'
 import { CATEGORIES } from '@/lib/constants'
-import SeeMore from "../ui/see-more"
+import SeeMore from '../ui/see-more'
 
-export async function SectionViajeros() {
+export async function SectionTravelers() {
   const { categories } = await getWpCategories({ per_page: 100 })
-  const viajeros = categories.filter(
-    (category: Category) => category.parent === CATEGORIES['viajeros'],
+  const travelers = categories.filter(
+    (category: Category) => category.parent === CATEGORIES['travelers'],
   )
   return (
     <section className=" relative w-full h-full bg-neutral-600">
@@ -35,11 +35,11 @@ export async function SectionViajeros() {
               Conoce a los
             </span>{' '}
             <span className=" italic font-light font-oswald text-4xl lg:text-5xl xl:text-6xl text-white">
-              Viajeros
+              travelers
             </span>
           </h2>
           <SeeMore
-            moreLink="/inspirate-en-venezuela/viajeros"
+            moreLink="/inspired-by/travelers"
             text="Ver todos"
             className=" px-2 md:px-4 py-0 font-oswald font-semibold text-sm sm:text-base md:text-lg xl:text-xl text-neutral-600 bg-tertiary-dark rounded-full"
           />
@@ -47,7 +47,7 @@ export async function SectionViajeros() {
       </div>
       <div className="relative w-full max-w-screen-2xl mx-auto h-full my-8 lg:my-12">
         <TravelerCarousel
-          items={viajeros.slice(0, 12)}
+          items={travelers.slice(0, 12)}
           pagination={true}
           navigation={false}
         />

@@ -16,11 +16,11 @@ export const MenuFooter = () => {
   const ROUTES = [
     {
       title: 'Términos y condiciones',
-      path: '/terminos-y-condiciones',
+      path: '/terms',
     },
     {
       title: 'Suscríbete',
-      path: '/suscribirme',
+      path: '/subscribe',
     },
   ]
 
@@ -47,7 +47,9 @@ export const MenuFooter = () => {
           height={56}
           className="mb-1 w-2/4 max-w-[184px] h-auto"
         />
-        <div className="text-xs text-white font-light tracking-widest">Este es un sitio de Media Moob</div>
+        <div className="text-xs text-white font-light tracking-widest">
+          Este es un sitio de Media Moob
+        </div>
       </div>
       <div className="flex justify-between">
         {ROUTES.map(({ title, path }) => (

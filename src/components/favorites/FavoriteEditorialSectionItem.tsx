@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { Heart } from 'lucide-react'
 import { SECONDARY_DARK_COLOR } from '@/lib/constants'
 import { useFavoriteStore } from '@/lib/modules/favorite/favorite-stores'
-import { htmlToText } from "html-to-text"
+import { htmlToText } from 'html-to-text'
 
 type FavoriteEditorialSectionItemProps = {
   item: Post
@@ -22,7 +22,7 @@ export const FavoriteEditorialSectionItem: React.FC<
 
   return (
     <div className="flex justify-center flex-col w-auto relative border-4 md:border-8 border-white rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 ease-in-out">
-      <Link href={`/favoritos/editorial/${item.slug}`} prefetch>
+      <Link href={`/favorites/editorial/${item.slug}`} prefetch>
         <div
           className={`relative h-[178px]  md:h-[300px] lg:h-[350px]  w-full`}
         >

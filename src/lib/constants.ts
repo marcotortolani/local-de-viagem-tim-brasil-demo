@@ -1,11 +1,12 @@
 // @/lib/constants
+import dictionary from '@/dictionary/lang.json'
 
 export const WP_BACKEND = process.env.NEXT_PUBLIC_API_URL
 const OPERATOR_COUNTRY = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
 
-export const REVALIDATE = 3600
+export const REVALIDATE = 3600 * 12 // 12 hour
 
-export const PREFIX_PERSIST_STORE = `qgv-${OPERATOR_COUNTRY}`
+export const PREFIX_PERSIST_STORE = `${dictionary['siteName']}-${OPERATOR_COUNTRY}`
 
 export const PRIMARY_COLOR = '#497D98'
 export const PRIMARY_LIGHT_COLOR = '#3DC1C9'
@@ -18,12 +19,12 @@ export const TERTIARY_DARK_COLOR = '#EEBB00'
 export const QUATERNARY_COLOR = '#43D5C8'
 export const QUATERNARY_COLOR_DARK = '#3D514F'
 
-export const HASH_TAG = ['queguay']
+export const HASH_TAG = [dictionary['siteName']]
 
 export const CATEGORIES = {
-  'inspirate-en-venezuela': 24, // Cat
-  itinerarios: 114, // Sub Cat
-  viajeros: 21, // Sub Cat
+  'inspired-by': 24, // Cat
+  itineraries: 114, // Sub Cat
+  travelers: 21, // Sub Cat
   'por-el-mundo': 20, // Cat
   destinos: 26, // Sub Cat
   'recorriendo-el-mundo': 25, // Sub Cat
@@ -31,7 +32,7 @@ export const CATEGORIES = {
   'sabores-del-mundo': 28, // Sub Cat
   'detras-del-mapa': 27, // Sub Cat
   checklist: 23,
-  'destinos-del-mes': 115, // Categoria de contenido promocional
+  'destinations-of-the-month': 115, // Categoria de contenido promocional
   shorts: 37,
 }
 
@@ -67,11 +68,3 @@ export const CHECKLIST_TAGS = [
   // { id: 142, name: 'Presupuesto', slug: 'presupuesto', color: PRIMARY_COLOR },
   { id: 146, name: 'Viajes', slug: 'viajes', color: PRIMARY_COLOR },
 ]
-
-export const STATE_MEMOTEST = {
-  start: 'START',
-  gaming: 'GAMING',
-  next: 'NEXT',
-  defeat: 'DEFEAT',
-  finish: 'FINISH',
-}

@@ -14,7 +14,7 @@ export const LogoGrayscale: React.FC<LogoProps> = ({
       <Link href="/" prefetch>
         <div className={`relative  ${className}`}>
           <Image
-            src="/images/logo-sidebar.webp"
+            src="/images/logo-product-white.webp"
             alt="logo"
             fill
             style={{

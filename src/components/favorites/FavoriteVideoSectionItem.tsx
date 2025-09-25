@@ -23,7 +23,7 @@ export const FavoriteVideoSectionItem: React.FC<
 
   return (
     <div className="flex justify-center flex-col w-auto relative border-4 md:border-8 border-white rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 ease-in-out">
-      <Link href={`/favoritos/videos/${item.slug}`} prefetch>
+      <Link href={`/favorites/videos/${item.slug}`} prefetch>
         <div
           className={`relative h-[178px]  md:h-[300px] lg:h-[350px] w-full flex items-center justify-center`}
         >

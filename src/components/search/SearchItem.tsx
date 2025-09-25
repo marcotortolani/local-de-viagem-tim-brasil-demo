@@ -19,7 +19,7 @@ export const SearchItem: React.FC<SearchItemProps> = ({ item }) => {
 
   return (
     <div className="flex justify-center flex-col w-auto relative border-4 border-white rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 ease-in-out">
-      <Link href={`/contenido/${editorialRoute}/${item.slug}`} prefetch>
+      <Link href={`/content/${editorialRoute}/${item.slug}`} prefetch>
         <div className="relative h-[184px] w-full md:h-[300px] rounded-sm">
           <Image
             className="rounded-sm"

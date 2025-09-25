@@ -44,7 +44,7 @@ export const ShortMenu: React.FC<ShortMenuProps> = ({ routes = [] }) => {
                     href={href || '#'}
                     className={` ${title === 'Inicio' && ' hidden 2xl:flex '}  
                   ${title === 'Suscríbete' && ' bg-secondary '}  
-                  ${href === '/destinos-del-mes' ? ' text-neutral-800 bg-neutral-300 ' : ' text-white bg-primary-light/50 '} z-20 relative group inline-flex w-max items-center justify-center rounded-full px-4 py-1 text-sm lg:text-[12px] xl:text-sm font-light fill-white hover:bg-primary transition-all duration-300 ease-in-out`}
+                  ${href === '/destinations-of-the-month' ? ' text-neutral-800 bg-neutral-300 ' : ' text-white bg-primary-light/50 '} z-20 relative group inline-flex w-max items-center justify-center rounded-full px-4 py-1 text-sm lg:text-[12px] xl:text-sm font-light fill-white hover:bg-primary transition-all duration-300 ease-in-out`}
                     prefetch
                     target={title === 'Suscríbete' ? '_blank' : '_self'}
                   >

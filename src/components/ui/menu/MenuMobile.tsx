@@ -51,7 +51,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     {
       title: 'Search',
       Icon: SearchIcon,
-      href: '/busqueda',
+      href: '/search',
     },
     {
       title: 'Home',
@@ -60,12 +60,12 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
     },
     {
       title: 'Inspírate en Venezuela',
-      href: '/inspirate-en-venezuela',
+      href: '/inspired-by',
       Icon: VenezuelaIcon,
     },
     {
       title: 'Favorite',
-      href: '/favoritos',
+      href: '/favorites',
       Icon: FavoriteIcon,
     },
   ]

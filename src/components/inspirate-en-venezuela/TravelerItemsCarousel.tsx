@@ -15,7 +15,7 @@ export const TravelerItemsCarousel: React.FC<TravelerItemsCarouselProps> = ({
   const name = category?.name?.replaceAll('-', ' ')
 
   return (
-    <Link href={`/inspirate-en-venezuela/viajeros/${category?.slug}`} prefetch>
+    <Link href={`/inspired-by/travelers/${category?.slug}`} prefetch>
       <div className="w-full h-full flex flex-col items-center gap-2">
         <div
           className={`relative w-full aspect-square overflow-hidden border-2 xl:border-4 border-solid border-white rounded-full `}

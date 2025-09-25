@@ -3,7 +3,7 @@ import { BannerGridVideo } from '../BannerGridVideo'
 import SeeMore from '../ui/see-more'
 import { getWpPosts } from '@/lib/api/wp/wp-actions'
 import { CATEGORIES } from '@/lib/constants'
-import { SliderVerticalPosts2 } from '../inspirate-en-venezuela/SliderVerticalPosts2'
+import { SliderVerticalPosts2 } from '../inspired-by/SliderVerticalPosts2'
 
 const ITEMS_GRID_PAISAJES = {
   video: '/videos/grid-checklist/checklist-video.mp4',

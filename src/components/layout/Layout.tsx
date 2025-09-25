@@ -9,7 +9,7 @@ import { Chatbot } from '../Chatbot'
 import SidebarMenu from './SidebarMenu'
 
 import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
-//import { getAdditionalConfig } from '@/lib/api/additional-config/additional-config-actions'
+
 // import SideNavBar from './SideNavBar'
 
 type LayoutProps = {
@@ -18,10 +18,8 @@ type LayoutProps = {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { setAdditionalConfig } = useAdditionalComponentsStore()
-  //const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    // setIsMounted(true)
     setAdditionalConfig({
       game: {
         title: '',
@@ -43,49 +41,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       validatorActive: true,
     })
   }, [])
-
-  // useEffect(() => {
-  //   if (!isMounted) return
-
-  //   // Fetch additional config
-  //   // const fetchAdditionalConfig = async () => {
-  //   //   getAdditionalConfig().then((res) =>
-  //   //     // set additional config store
-  //   //     {
-  //   //       if (!res) {
-  //   //         console.log('No additional config found')
-  //   //         setAdditionalConfig({
-  //   //           game: {
-  //   //             title: '',
-  //   //             bannerMobile: '',
-  //   //             bannerDesktop: '',
-  //   //             url: '',
-  //   //             validPeriod: {
-  //   //               startDate: '',
-  //   //               endDate: '',
-  //   //             },
-  //   //           },
-  //   //           additionalSection: {
-  //   //             show: false,
-  //   //             title: '',
-  //   //             flag: '',
-  //   //             'wp-category-slug': '',
-  //   //             'wp-category-id': 0,
-  //   //           },
-  //   //           validatorActive: true,
-  //   //         })
-  //   //         return
-  //   //       }
-  //   //       setAdditionalConfig(res)
-  //   //     },
-  //   //   )
-  //   // }
-
-  //   // fetchAdditionalConfig()
-
-  //   // Set default additional config
-
-  // }, [isMounted])
 
   return (
     <>

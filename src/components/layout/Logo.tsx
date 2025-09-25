@@ -14,7 +14,7 @@ export const Logo: React.FC<LogoProps> = ({
       <Link href="/" prefetch>
         <div className={`relative  ${className}`}>
           <Image
-            src="/images/logo.webp"
+            src="/images/logo-product.webp"
             alt="logo Que Guay"
             className="w-full h-full"
             fill

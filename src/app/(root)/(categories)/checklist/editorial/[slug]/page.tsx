@@ -85,7 +85,7 @@ export default async function Page({ params }: { params: PageProps }) {
         <VideoCarousel
           title="También te puede interesar"
           items={postsInterest}
-          moreLink={`/cultura-y-paladar`}
+          moreLink={`/culture-and-flavor`}
         />
       </Container>
     </main>

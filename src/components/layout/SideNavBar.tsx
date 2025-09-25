@@ -9,17 +9,17 @@ import Link from 'next/link'
 const ITEMS_NAV = [
   {
     name: 'Conociendo Venezuela',
-    href: '/inspirate-en-venezuela',
+    href: '/inspired-by',
     icon: '/icons/destinos-icon.svg',
   },
   {
     name: 'Por el Mundo',
-    href: '/por-el-mundo',
+    href: '/around-the-world',
     icon: '/icons/mundo-icon.svg',
   },
   {
     name: 'Cultura y Paladar',
-    href: '/cultura-y-paladar',
+    href: '/culture-and-flavor',
     icon: '/icons/sabores-del-mundo-icon.svg',
   },
   {
@@ -29,18 +29,18 @@ const ITEMS_NAV = [
   },
   {
     name: 'Destinos del Mes',
-    href: '/destinos-del-mes',
-    icon: '/icons/itinerarios-icon.svg',
+    href: '/destinations-of-the-month',
+    icon: '/icons/itineraries-icon.svg',
   },
   {
     name: 'Detras del Mapa',
-    href: '/cultura-y-paladar/detras-del-mapa',
+    href: '/culture-and-flavor/detras-del-mapa',
     icon: '/icons/mapa-icon.svg',
   },
   {
-    name: 'Viajeros',
-    href: '/inspirate-en-venezuela/viajeros',
-    icon: '/icons/viajeros-icon.svg',
+    name: 'Travelers',
+    href: '/inspired-by/travelers',
+    icon: '/icons/travelers-icon.svg',
   },
 ]
 
@@ -96,7 +96,7 @@ export default function SideNavBar() {
           >
             <Link href="/" prefetch className=" w-full h-full">
               <Image
-                src="/images/logo-square-qgv-blanco.webp"
+                src="/images/logo-product-white.webp"
                 alt="logo Que Guay"
                 width={61}
                 height={43}

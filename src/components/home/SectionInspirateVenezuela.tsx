@@ -4,16 +4,16 @@ import React from 'react'
 import { Category, Post } from '@/lib/api/wp/wp-types'
 
 import { VideoItem } from '../video/VideoItem'
-import { SliderVerticalPosts2 } from '../inspirate-en-venezuela/SliderVerticalPosts2'
+import { SliderVerticalPosts2 } from '../inspired-by/SliderVerticalPosts2'
 import SeeMore from '../ui/see-more'
-import { TravelerCarousel } from '../inspirate-en-venezuela/TravelerCarousel'
+import { TravelerCarousel } from '../inspired-by/TravelerCarousel'
 
-export function SectionInspirateVenezuela({
+export function SectionInspiredBy({
   posts,
-  viajeros,
+  travelers,
 }: {
   posts: Post[]
-  viajeros: Category[]
+  travelers: Category[]
 }) {
   const VIDEO_BANNER: Post = {
     id: 1,
@@ -72,7 +72,7 @@ export function SectionInspirateVenezuela({
               <div className=" relative w-12 h-12 md:w-16 md:h-16 ">
                 <Image
                   className=" relative w-full object-contain "
-                  src="/images/bandera-venezuela-01.webp"
+                  src="/images/brasil-flag.webp"
                   alt="Image Bandera Venezuela"
                   fill
                 />
@@ -104,7 +104,7 @@ export function SectionInspirateVenezuela({
               Lo más nuevo
             </h4>
             <SeeMore
-              moreLink="/inspirate-en-venezuela"
+              moreLink="/inspired-by"
               text="Ver todo"
               className="px-4 py-0 font-oswald font-semibold text-base md:text-lg xl:text-xl text-neutral-600 bg-tertiary-dark rounded-full"
             />
@@ -112,12 +112,12 @@ export function SectionInspirateVenezuela({
           <SliderVerticalPosts2
             posts={posts.slice(0, 6)}
             pagination={true}
-            parentSlug={'inspirate-en-venezuela'}
+            parentSlug={'inspired-by'}
           />
         </div>
       )}
 
-      {/* Slider - Viajeros */}
+      {/* Slider - travelers */}
       <div className=" w-full max-w-screen-2xl mx-auto flex flex-col items-center gap-4 lg:gap-8 xl:gap-10 ">
         <div className=" w-full px-4 md:px-7 xl:px-10 flex items-center justify-between">
           <h2 className=" flex items-center gap-2  ">
@@ -125,17 +125,17 @@ export function SectionInspirateVenezuela({
               Conoce a los
             </span>{' '}
             <span className=" mb-2 italic font-light font-oswald text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">
-              Viajeros
+              travelers
             </span>
           </h2>
           <SeeMore
-            moreLink="/inspirate-en-venezuela/viajeros"
+            moreLink="/inspired-by/travelers"
             text="Ver todos"
             className="px-4 py-0 font-oswald font-semibold text-base md:text-lg xl:text-xl text-neutral-600 bg-tertiary-dark rounded-full"
           />
         </div>
 
-        <TravelerCarousel items={viajeros} pagination={true} />
+        <TravelerCarousel items={travelers} pagination={true} />
       </div>
     </section>
   )

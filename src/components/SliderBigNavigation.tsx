@@ -58,7 +58,7 @@ export const SliderBigNavigation = ({ posts }: { posts: Post[] }) => {
         {posts.slice(0, 3).map((post, index) => (
           <SwiperSlide key={index} className="h-full ">
             <Link
-              href={`/por-el-mundo/recorriendo-el-mundo/${post.slug}`}
+              href={`/around-the-world/recorriendo-el-mundo/${post.slug}`}
               prefetch
               className="relative w-full h-full"
             >
