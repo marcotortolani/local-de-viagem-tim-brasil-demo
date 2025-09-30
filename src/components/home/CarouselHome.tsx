@@ -157,7 +157,7 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
                           {/* {category.name} */}
                           {dictionary['Inspired By Brazil']}
                         </h4>
-                        <h3 className="w-full mb-2 text-white text-left text-5xl md:text-6xl lg:text-[4rem] leading-[1.2] lg:leading-[1.28] line-clamp-2 md:line-clamp-3 lg:line-clamp-2  font-oswald font-normal">
+                        <h3 className="w-full mb-2 text-white text-left text-5xl md:text-6xl lg:text-[4rem] leading-[1.2] lg:leading-[1.28] line-clamp-2 md:line-clamp-3 lg:line-clamp-2 font-oswald font-normal">
                           {title?.rendered}
                         </h3>
                         {excerpt?.rendered && (

@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Category } from '@/lib/api/wp/wp-types'
 import Default from '/public/images/default.webp'
-import Link from 'next/link'
+import { htmlToText } from 'html-to-text'
 
 type TravelerItemsCarouselProps = {
   category: Category
@@ -33,7 +34,7 @@ export const TravelerItemsCarousel: React.FC<TravelerItemsCarouselProps> = ({
         </div>
         <div className="z-20 relative w-5/6 bg-white1 rounded-md">
           <span className="  text-white text-xs text-wrap line-clamp-2 leading-[auto] font-poppins font-light tracking-wide md:text-lg text-center">
-            {name}
+            {htmlToText(name || '')}
           </span>
         </div>
       </div>
