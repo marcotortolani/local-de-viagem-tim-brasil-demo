@@ -8,8 +8,8 @@ import Default from '/public/images/default.webp'
 import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
 // reemplazar imagen mobile correcta
-import bannerMobile from '/public/images/banner-trivia-qgv-mobile.webp'
-import bannerDesktop from '/public/images/banner-trivia-qgv-desktop.webp'
+import bannerMobile from '/public/images/banner-trivia-mobile.webp'
+import bannerDesktop from '/public/images/banner-trivia-desktop.webp'
 
 const IS_TEST = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY === 'test'
 

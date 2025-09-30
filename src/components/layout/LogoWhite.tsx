@@ -15,7 +15,7 @@ export const LogoWhite: React.FC<LogoProps> = ({
         <div className={`relative  ${className}`}>
           <Image
             src="/images/logo-product-white.webp"
-            alt="logo"
+            alt="White logo brand"
             fill
             style={{
               objectFit: 'contain',

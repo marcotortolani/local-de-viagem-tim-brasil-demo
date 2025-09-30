@@ -9,6 +9,8 @@ import { RouteItem } from '@/lib/route/route-types'
 import { useLayoutSidebarStore } from './layout-store'
 //import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
+import dictionary from '@/dictionary/lang.json'
+
 export default function SidebarMenu(): React.ReactNode {
   const pathname = usePathname()
   const { open, closeDialog } = useLayoutSidebarStore()
@@ -18,40 +20,40 @@ export default function SidebarMenu(): React.ReactNode {
 
   const MOBILE_ROUTES: RouteItem[] = [
     {
-      title: 'Inicio',
+      title: dictionary['Home'],
       href: '/',
     },
     {
-      title: 'Inspírate en Venezuela',
+      title: dictionary['Inspired By Brazil'],
       href: '/inspired-by',
     },
     {
-      title: 'Por el Mundo',
+      title: dictionary['Around the World'],
       href: '/around-the-world',
     },
     {
-      title: 'Cultura y Paladar',
+      title: dictionary['Culture and Flavor'],
       href: '/culture-and-flavor',
     },
     {
-      title: 'Checklist',
+      title: dictionary['Checklist'],
       href: '/checklist',
     },
     {
-      title: 'Destinos del Mes',
+      title: dictionary['Destinations of the Month'],
       href: '/destinations-of-the-month',
     },
     {
+      title: dictionary['Favorites'],
       href: '/favorites',
-      title: 'Favoritos',
     },
     {
+      title: dictionary['Shorts'],
       href: '/shorts',
-      title: 'Shorts',
     },
     {
+      title: dictionary['Search'],
       href: '/search',
-      title: 'Búsqueda',
     },
   ]
 

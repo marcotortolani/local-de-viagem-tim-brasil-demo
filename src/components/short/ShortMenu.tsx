@@ -14,6 +14,8 @@ import {
 import Link from 'next/link'
 import { RouteItem } from '@/lib/route/route-types'
 
+import dictionary from '@/dictionary/lang.json'
+
 type ShortMenuProps = {
   routes: RouteItem[]
 }
@@ -42,11 +44,13 @@ export const ShortMenu: React.FC<ShortMenuProps> = ({ routes = [] }) => {
                 <div className="z-0 relative w-fit h-fit">
                   <Link
                     href={href || '#'}
-                    className={` ${title === 'Inicio' && ' hidden 2xl:flex '}  
-                  ${title === 'Suscríbete' && ' bg-secondary '}  
+                    className={` ${title === dictionary['Home'] && ' hidden 2xl:flex '}  
+                  ${title === dictionary['Subscribe'] && ' bg-secondary '}  
                   ${href === '/destinations-of-the-month' ? ' text-neutral-800 bg-neutral-300 ' : ' text-white bg-primary-light/50 '} z-20 relative group inline-flex w-max items-center justify-center rounded-full px-4 py-1 text-sm lg:text-[12px] xl:text-sm font-light fill-white hover:bg-primary transition-all duration-300 ease-in-out`}
                     prefetch
-                    target={title === 'Suscríbete' ? '_blank' : '_self'}
+                    target={
+                      title === dictionary['Subscribe'] ? '_blank' : '_self'
+                    }
                   >
                     {Icon ? (
                       <Icon className=" w-6 h-6 xl:w-6 xl:h-5  " />

@@ -1,10 +1,10 @@
 import React from 'react'
-
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import Image from 'next/image'
+import { SectionDestinations } from '@/components/around-the-world/SectionDestinations'
+import { SectionTravelingTheWorld } from '@/components/around-the-world/SectionTravelingTheWorld'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 
-import { SectionDestinos } from '@/components/around-the-world/SectionDestinos'
-import { SectionRecorriendoElMundo } from '@/components/around-the-world/SectionRecorriendoElMundo'
+import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
   return (
@@ -29,20 +29,26 @@ export default async function Page() {
           <div className="z-20 relative w-full max-w-screen-xl mx-auto h-full lg:h-fit pb-4  flex flex-col items-center justify-end xl:flex-row lg:items-center xl:justify-center gap-4 xl:gap-8 ">
             <h2 className=" flex items-end lg:items-center  gap-2 ">
               <span className=" font-sign-painter text-4xl md:text-5xl xl:text-6xl font-light text-neutral-700">
-                Viajando
+                {dictionary['Traveling']}
               </span>{' '}
               <span className=" mb-2 italic font-normal font-oswald text-4xl lg:text-5xl xl:text-6xl text-white">
-                Por el Mundo
+                {dictionary['Around the World']}
               </span>
             </h2>
             <div className="z-10 relative w-[95%] sm:max-w-md md:max-w-screen-md 2xl:max-w-2xl px-8 py-4 lg:px-10 xl:px-12 bg-black/50 rounded-3xl">
               <p className=" font-oswald italic text-white text-base md:text-xl lg:text-2xl font-extralight">
-                Desde las majestuosas ciudades de Europa hasta las exóticas
-                playas del sudeste asiático,{' '}
+                {
+                  dictionary[
+                    'From the majestic cities of Europe to the exotic beaches of Southeast Asia'
+                  ]
+                }
+                ,{' '}
                 <span className=" not-italic font-normal">
-                  te invitamos a descubrir los rincones más fascinantes del
-                  mundo, y a dejarte maravillar por la diversidad de culturas,
-                  sabores y paisajes que esperan ser explorados.
+                  {
+                    dictionary[
+                      'We invite you to discover the most fascinating corners of the world, and to be amazed by the diversity of cultures, flavors, and breathtaking landscapes.'
+                    ]
+                  }
                 </span>
               </p>
             </div>
@@ -53,12 +59,12 @@ export default async function Page() {
         </div>
 
         <div className=" hidden lg:flex">
-          <Breadcrumb homeElement="Inicio" />
+          <Breadcrumb homeElement={dictionary['Home']} />
         </div>
       </section>
 
-      <SectionDestinos parentSlug="por-el-mundo" />
-      <SectionRecorriendoElMundo parentSlug="por-el-mundo" />
+      <SectionDestinations parentSlug="around-the-world" />
+      <SectionTravelingTheWorld parentSlug="around-the-world" />
     </main>
   )
 }

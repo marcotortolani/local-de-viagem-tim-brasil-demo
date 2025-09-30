@@ -9,11 +9,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  if (operatorCountry === 'test') return <>{children}</>
-  
   return (
     <Layout>
-      <TrialProvider>{children}</TrialProvider>
+      {operatorCountry === 'test' ? (
+        <>{children}</>
+      ) : (
+        <TrialProvider>{children}</TrialProvider>
+      )}
     </Layout>
   )
 }

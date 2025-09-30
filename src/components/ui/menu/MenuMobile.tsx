@@ -5,6 +5,8 @@ import { MenuItem } from '@/components/ui/menu/menu-types'
 import Link from 'next/link'
 import { SECONDARY_COLOR } from '@/lib/constants'
 
+import dictionary from '@/dictionary/lang.json'
+
 import {
   FavoriteIcon,
   HomeIcon,
@@ -44,34 +46,34 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
 
   const items: MenuItem[] = [
     {
-      title: 'Videos',
+      title: dictionary['Shorts'],
       href: '/shorts',
       Icon: ShortIcon,
     },
     {
-      title: 'Search',
+      title: dictionary['Search'],
       Icon: SearchIcon,
       href: '/search',
     },
     {
-      title: 'Home',
+      title: dictionary['Home'],
       href: '/',
       Icon: HomeIcon,
     },
     {
-      title: 'Inspírate en Venezuela',
+      title: dictionary['Inspired By Brazil'],
       href: '/inspired-by',
       Icon: VenezuelaIcon,
     },
     {
-      title: 'Favorite',
+      title: dictionary['Favorites'],
       href: '/favorites',
       Icon: FavoriteIcon,
     },
   ]
   return (
     <div
-      className={`shadow-t fixed bottom-0 left-0 z-50 flex w-full items-center justify-around py-3  lg:hidden bg-primary-dark ${menuClassName}`}
+      className={`shadow-t fixed bottom-0 left-0 z-50 flex w-full items-center justify-around py-3 lg:hidden bg-primary-dark ${menuClassName}`}
     >
       {items.map(({ href, action, title, Icon }) => {
         const routeLevelPath =

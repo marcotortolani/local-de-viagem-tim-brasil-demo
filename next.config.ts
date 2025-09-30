@@ -24,6 +24,14 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 's3-sa-east-1.amazonaws.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'player.vimeo.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'vimeo.com'
       }
     ],
     loader: 'custom',

@@ -7,6 +7,8 @@ import { htmlToText } from 'html-to-text'
 import { REGION_TAGS } from '@/lib/constants'
 import { PlayIcon } from './video/PlayIcon'
 
+import dictionary from '@/dictionary/lang.json'
+
 export const SquareCard = ({
   item,
   categorySlug,
@@ -50,7 +52,7 @@ export const SquareCard = ({
         <div className=" absolute top-0 left-0 w-full h-full px-2 pb-14 md:pb-6 flex items-end justify-start ">
           {recentPost && (
             <div className=" absolute top-4 left-4 w-fit px-2 flex items-center justify-center bg-primary rounded-full">
-              <span className=" text-white">Nuevo</span>
+              <span className=" text-white">{dictionary['New']}</span>
             </div>
           )}
           <h4

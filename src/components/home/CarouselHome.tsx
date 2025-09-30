@@ -13,6 +13,8 @@ import Default from '/public/images/default.webp'
 import BannerSuscription from './BannerSuscription'
 import { mergePostCategories } from '@/lib/modules/post/post-utils'
 
+import dictionary from '@/dictionary/lang.json'
+
 type CarouselHomeProps = {
   posts: Post[]
   categories: Category[]
@@ -66,9 +68,9 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
     <div className="relative w-full h-full">
       <div className="z-20 absolute top-20 md:top-0 w-full h-20 pb-6 bg-gradient-to-b from-primary-dark to-transparent flex items-center justify-center">
         <p className=" font-poppins font-extralight uppercase text-sm sm:text-base md:text-lg xl:text-xl text-white ">
-          El mundo está a un{' '}
+          {dictionary['The world is just one']}{' '}
           <span className=" font-medium text-tertiary">
-            Click de Distancia!
+            {dictionary['Click Away!']}
           </span>
         </p>
       </div>
@@ -82,12 +84,6 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
         autoplay
         loop
         onSlideChange={(el) => setCurrentIndex(el.realIndex)}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter: true,
-        //   waitForTransition: true,
-        // }}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -159,7 +155,7 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
                           // style={{ background: getCategoryColor(categories) }}
                         >
                           {/* {category.name} */}
-                          Inspírate en Venezuela
+                          {dictionary['Inspired By Brazil']}
                         </h4>
                         <h3 className="w-full mb-2 text-white text-left text-5xl md:text-6xl lg:text-[4rem] leading-[1.2] lg:leading-[1.28] line-clamp-2 md:line-clamp-3 lg:line-clamp-2  font-oswald font-normal">
                           {title?.rendered}
@@ -187,7 +183,7 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
                       prefetch
                       className="w-fit py-1 px-6 lg:ml-6 mt-6 lg:mt-8 uppercase inline-flex items-center justify-center rounded-full font-semibold text-lg bg-tertiary text-black hover:bg-tertiary-dark transition-all duration-300 ease-in-out"
                     >
-                      VER MÁS
+                      {dictionary['See more']}
                     </Link>
                   </div>
 

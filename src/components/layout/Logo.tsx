@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import dictionary from '@/dictionary/lang.json'
+
 type LogoProps = {
   className?: string
 }
@@ -15,7 +17,7 @@ export const Logo: React.FC<LogoProps> = ({
         <div className={`relative  ${className}`}>
           <Image
             src="/images/logo-product.webp"
-            alt="logo Que Guay"
+            alt={`Logo ${dictionary['siteName']}`}
             className="w-full h-full"
             fill
             style={{

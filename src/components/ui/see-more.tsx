@@ -1,11 +1,11 @@
-//import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 import { cn } from '@/lib/utils'
+
+import dictionary from '@/dictionary/lang.json'
 
 export default function SeeMore({
   moreLink = '#',
-  text = 'Ver más',
+  text = dictionary['See more'],
   className = '',
 }) {
   return (
@@ -16,7 +16,6 @@ export default function SeeMore({
         className,
       )}
     >
-      {/* <ChevronRight size={14} /> */}
       {text}
     </Link>
   )

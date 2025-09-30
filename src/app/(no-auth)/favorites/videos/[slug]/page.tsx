@@ -11,6 +11,8 @@ import Breadcrumb from '@/components/ui/Breadcrumb'
 import { VideoItem } from '@/components/video/VideoItem'
 import { htmlToText } from 'html-to-text'
 
+import dictionary from '@/dictionary/lang.json'
+
 type PageProps = Promise<{ slug: string }>
 
 export default async function Page({ params }: { params: PageProps }) {
@@ -22,7 +24,7 @@ export default async function Page({ params }: { params: PageProps }) {
 
   const { categories } = await getWpCategories({ per_page: 100 })
   const { posts: postsInterest } = await getWpPosts({
-    categories: CATEGORIES['sabores-del-mundo'].toString(),
+    categories: CATEGORIES['flavors-of-the-world'].toString(),
     exclude: wpPost.id?.toString(),
   })
 
@@ -37,7 +39,7 @@ export default async function Page({ params }: { params: PageProps }) {
   return (
     <main className="mt-[5rem] md:mt-[6rem] lg:pt-1 pb-14 bg-primary/80">
       <div className=" w-full max-w-screen-xl mx-auto my-2">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
       </div>
 
       <div className="w-full max-w-screen-xl px-2 mx-auto flex justify-center mb-4 ">
@@ -62,9 +64,9 @@ export default async function Page({ params }: { params: PageProps }) {
 
         <div className=" w-full h-0.5 mt-10 bg-black "></div>
         <VideoCarousel
-          title="También te puede interesar"
+          title={dictionary['You may also be interested in']}
           items={postsInterest}
-          moreLink={`/culture-and-flavor/sabores-del-mundo`}
+          moreLink={`/culture-and-flavor/editorial`}
         />
       </Container>
     </main>

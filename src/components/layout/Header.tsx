@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       href: '/',
     },
     {
-      title: dictionary['Inspired By'],
+      title: dictionary['Inspired By Brazil'],
       href: '/inspired-by',
     },
     {

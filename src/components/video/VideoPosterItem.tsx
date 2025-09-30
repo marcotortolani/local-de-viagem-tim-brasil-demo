@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Post } from '@/lib/api/wp/wp-types'
 import { wpImage } from '@/lib/api/wp/wp-utils'
-
 import Default from '/public/images/default.webp'
 import { PlayIcon } from './PlayIcon'
 
@@ -33,13 +32,7 @@ export const VideoPosterItem: React.FC<VideoPosterItemProps> = ({
           }}
         />
         <div className=" absolute top-0 left-0 w-full h-full flex items-center justify-center ">
-          {isVideo ? (
-            <PlayIcon />
-          ) : (
-            <span className="w-fit uppercase inline-flex items-center justify-center rounded-full font-semibold text-lg py-0.5 px-6 bg-tertiary text-black hover:bg-tertiary-dark transition-all duration-300 ease-in-out">
-              VER
-            </span>
-          )}
+          {isVideo && <PlayIcon />}
         </div>
         <div className=" absolute bottom-4 left-0 w-full px-2 line-clamp-2 ">
           <span className="px-2 bg-white text-black text-sm md:text-base lg:text-lg text-left font-normal">

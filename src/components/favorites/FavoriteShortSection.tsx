@@ -6,6 +6,8 @@ import { ChevronRight } from 'lucide-react'
 import { SectionTitle } from '@/components/text/SectionTitle'
 import { FavoriteShortSectionItem } from '@/components/favorites/FavoriteShortSectionItem'
 
+import dictionary from '@/dictionary/lang.json'
+
 type FavoriteShortSectionProps = {
   title?: string
   moreLink?: string
@@ -22,7 +24,6 @@ export const FavoriteShortSection: React.FC<FavoriteShortSectionProps> = ({
   color = 'text-white ',
 }) => {
   return (
-
     <div>
       <div className="flex items-center justify-between mb-2 md:mb-4">
         <SectionTitle color={color}>{title}</SectionTitle>
@@ -31,7 +32,7 @@ export const FavoriteShortSection: React.FC<FavoriteShortSectionProps> = ({
             href={moreLink}
             className="text-white text-xs  font-normal md:text-[16px] flex items-center"
           >
-            Ver más <ChevronRight size={20} className="ml-1" />
+            {dictionary['See more']} <ChevronRight size={20} className="ml-1" />
           </Link>
         )}
       </div>
@@ -44,7 +45,7 @@ export const FavoriteShortSection: React.FC<FavoriteShortSectionProps> = ({
         </div>
       ) : (
         <div className="text-white text-center bg-neutral-500 py-4 rounded-xl ">
-          No tienes shorts disponible
+          {dictionary['No shorts available']}
         </div>
       )}
     </div>

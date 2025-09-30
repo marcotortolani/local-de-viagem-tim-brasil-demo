@@ -23,6 +23,8 @@ import {
 
 import { HASH_TAG } from '@/lib/constants'
 
+import dictionary from '@/dictionary/lang.json'
+
 type SharedProps = {
   item?: Post
   tags?: Tag[]
@@ -40,6 +42,7 @@ export const Shared: React.FC<SharedProps> = ({
   const title = item?.title?.rendered
   const tagNames = tags?.map((tag) => `#${tag.name}`) as string[]
   const [open, setOpen] = React.useState(false)
+  const sharedText = `${dictionary['Check out this content of']} ${dictionary['site']}: ${title}`
 
   return (
     <DropdownMenu open={open} onOpenChange={() => setOpen(!open)}>
@@ -71,10 +74,7 @@ export const Shared: React.FC<SharedProps> = ({
               className=" hover:fill-secondary"
             />
           </TwitterShareButton>
-          <WhatsappShareButton
-            url={currentUrl || url}
-            title={`Mirá este contenido de Que Guay Viajes: ${title}`}
-          >
+          <WhatsappShareButton url={currentUrl || url} title={sharedText}>
             <WhatsappIcon
               width={30}
               height={30}
@@ -82,10 +82,7 @@ export const Shared: React.FC<SharedProps> = ({
               className=" hover:fill-secondary"
             />
           </WhatsappShareButton>
-          <TelegramShareButton
-            url={currentUrl || url}
-            title={`Mirá este contenido de Que Guay Viajes: ${title}`}
-          >
+          <TelegramShareButton url={currentUrl || url} title={sharedText}>
             <TelegramIcon
               width={30}
               height={30}

@@ -10,9 +10,7 @@ import { Pagination } from '@/components/pagination/Pagination'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import { FavoriteVideoSectionItem } from '@/components/favorites/FavoriteVideoSectionItem'
 
-// const Loading = dynamic(() => import('@/components/Loading'), {
-//   ssr: false,
-// })
+import dictionary from '@/dictionary/lang.json'
 
 const PER_PAGE = 12
 
@@ -59,7 +57,7 @@ export default function Page() {
         </div>
       ) : (
         <div className="text-white text-center bg-neutral-500 py-4 rounded-xl ">
-          No tienes contenido editorial disponible
+          {dictionary['No videos available']}
         </div>
       )}
     </div>
@@ -67,10 +65,10 @@ export default function Page() {
   return (
     <main className=" w-full h-full mt-[5rem] md:mt-[6rem] lg:pt-2 bg-primary/80 ">
       <div className=" w-full max-w-screen-xl mx-auto lg:pl-4 ">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
       </div>
       <Container className="pt-2 pb-24">
-        <SectionTitle>Videos favoritos</SectionTitle>
+        <SectionTitle>{dictionary['Favorite videos']}</SectionTitle>
         {content}
         <Pagination
           pages={pages}

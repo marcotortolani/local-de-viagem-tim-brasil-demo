@@ -1,9 +1,8 @@
-import React from 'react'
-
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import Image from 'next/image'
-
 import { SectionTravelers2 } from '@/components/inspired-by/SectionTravelers2'
+import Breadcrumb from '@/components/ui/Breadcrumb'
+
+import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
   return (
@@ -19,7 +18,7 @@ export default async function Page() {
           <Image
             className=" relative sm:hidden w-full h-auto md:w-auto md:h-full object-fill md:object-cover "
             src="/images/hd/bg-travelers-mobile.webp"
-            alt="Image background desktop version"
+            alt="Image background mobile version"
             fill
           />
         </div>
@@ -28,16 +27,19 @@ export default async function Page() {
           <div className="z-20 relative w-full max-w-screen-xl mx-auto h-full lg:h-fit md:pb-4  flex flex-col items-center justify-end xl:flex-row lg:items-center xl:justify-center gap-2 md:gap-4 xl:gap-8 ">
             <h2 className=" flex items-end lg:items-center  gap-2 ">
               <span className=" font-sign-painter text-4xl md:text-5xl xl:text-6xl font-light text-tertiary">
-                Nuestros
+                {dictionary['Ours']}
               </span>{' '}
               <span className=" mb-2 italic font-normal font-oswald text-4xl lg:text-5xl xl:text-6xl text-white">
-                travelers
+                {dictionary['Travelers']}
               </span>
             </h2>
             <div className="z-10 relative w-[95%] sm:max-w-md md:max-w-screen-md 2xl:max-w-2xl px-4 py-3 md:px-8 md:py-4 lg:px-10 xl:px-12 bg-black/50 rounded-2xl md:rounded-3xl">
               <p className=" font-oswald italic text-white text-base md:text-xl lg:text-2xl font-extralight">
-                Conozca a nuestros travelers, acompañalos en sus travesías, y
-                descubre junto a ellos lugares mágicos de nuestro hermoso país.
+                {
+                  dictionary[
+                    'Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.'
+                  ]
+                }
               </p>
             </div>
           </div>
@@ -47,7 +49,7 @@ export default async function Page() {
         </div>
 
         <div className="w-full max-w-screen-xl mx-auto hidden lg:flex">
-          <Breadcrumb homeElement="Inicio" />
+          <Breadcrumb homeElement={dictionary['Home']} />
         </div>
       </section>
 

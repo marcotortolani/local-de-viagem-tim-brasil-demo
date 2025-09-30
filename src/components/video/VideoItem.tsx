@@ -49,7 +49,6 @@ export const VideoItem: React.FC<VideoItemProps> = ({
       <ReactPlayer
         ref={ref}
         url={item.video.url}
-        // src={item.video.url}
         width="100%"
         height="102%"
         className=" w-full h-full "

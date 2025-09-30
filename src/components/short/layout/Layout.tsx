@@ -10,6 +10,8 @@ import { MobileHeader } from '@/components/layout/MobileHeader'
 import { Heart } from 'lucide-react'
 import { SearchIcon } from '@/components/icons'
 
+import dictionary from '@/dictionary/lang.json'
+
 // import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
 type LayoutProps = {
@@ -25,41 +27,41 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const ROUTES: RouteItem[] = [
     {
-      title: 'Inicio',
+      title: dictionary['Home'],
       href: '/',
     },
     {
-      title: 'Inspírate en Venezuela',
+      title: dictionary['Inspired By Brazil'],
       href: '/inspired-by',
     },
     {
-      title: 'Por el Mundo',
+      title: dictionary['Around the World'],
       href: '/around-the-world',
     },
     {
-      title: 'Cultura y Paladar',
+      title: dictionary['Culture and Flavor'],
       href: '/culture-and-flavor',
     },
     {
-      title: 'Checklist',
+      title: dictionary['Checklist'],
       href: '/checklist',
     },
     {
+      title: dictionary['Shorts'],
       href: '/shorts',
-      title: 'Shorts',
     },
     {
-      title: 'Destinos del Mes',
+      title: dictionary['Destinations of the Month'],
       href: '/destinations-of-the-month',
     },
     {
+      title: dictionary['Favorites'],
       Icon: Heart,
-      title: 'Favoritos',
       href: '/favorites',
     },
     {
+      title: dictionary['Search'],
       Icon: SearchIcon,
-      title: 'Busqueda',
       href: '/search',
     },
   ]

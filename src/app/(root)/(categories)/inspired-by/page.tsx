@@ -2,10 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 
 import Breadcrumb from '@/components/ui/Breadcrumb'
-import { SectionRegiones } from '@/components/inspired-by/SectionRegiones'
-import { SectionPaisajes } from '@/components/inspired-by/SectionPaisajes'
+import { SectionRegions } from '@/components/inspired-by/SectionRegions'
+import { SectionLandscapes } from '@/components/inspired-by/SectionLandscapes'
 import { SectionTravelers } from '@/components/inspired-by/SectionTravelers'
-import { Sectionitineraries } from '@/components/inspired-by/Sectionitineraries'
+import { SectionItineraries } from '@/components/inspired-by/SectionItineraries'
+
+import dictionary from '@/dictionary/lang.json'
 
 import '@/components/inspired-by/style.css'
 
@@ -24,7 +26,7 @@ export default async function Page() {
           <Image
             className=" relative sm:hidden w-full h-auto md:w-auto md:h-full object-fill md:object-cover "
             src="/images/hd/bg-inspirate-venezuela-mobile.webp"
-            alt="Image background desktop version"
+            alt="Image background mobile version"
             fill
             priority
           />
@@ -37,35 +39,39 @@ export default async function Page() {
                 <Image
                   className="lg:hidden relative w-full h-auto object-contain "
                   src="/images/inspirate-venezuela-title-mobile.webp"
-                  alt="Image Title Inspirate en Venezuela"
+                  alt="Image Title Inspired By"
                   fill
                   priority
                 />
                 <Image
                   className="hidden lg:flex relative w-full h-auto object-contain "
                   src="/images/inspirate-venezuela-title-desktop.webp"
-                  alt="Image Title Inspirate en Venezuela"
+                  alt="Image Title Inspired By"
                   fill
                   priority
                 />
               </div>
             </div>
             <p className="z-10 relative w-5/6 max-w-md md:max-w-screen-md 2xl:max-w-xl mx-auto lg:mx-20 font-poppins text-white text-center lg:text-left text-pretty text-xs md:text-lg lg:text-xl font-extralight">
-              Desde las imponentes montañas de los Andes hasta las playas de
-              arena blanca del Caribe, te invitamos a{' '}
+              {
+                dictionary[
+                  'From the vibrant energy of Rio de Janeiro to the vastness of the Amazon, we invite you to'
+                ]
+              }{' '}
               <span className=" font-medium">
-                explorar cada rincón de Venezuela y a sumergirte en la riqueza
-                de su cultura y sus paisajes
+                {
+                  dictionary[
+                    'explore Brazil and immerse yourself in the richness of its culture, music, and breathtaking landscapes.'
+                  ]
+                }
               </span>
-              .
             </p>
           </div>
-
           <div className="z-0 absolute bottom-0 w-full h-1/2 md:h-1/3 xl:h-1/2 bg-gradient-to-t from-black to-transparent"></div>
         </div>
 
         <div className=" hidden lg:flex">
-          <Breadcrumb homeElement="Inicio" />
+          <Breadcrumb homeElement={dictionary['Home']} />
         </div>
         <div className=" absolute bottom-0 left-0 translate-x-1/2 md:translate-x-3/4 lg:translate-x-1/4 w-1/2 h-1/2 md:w-1/3 md:h-3/4 ">
           <Image
@@ -78,10 +84,10 @@ export default async function Page() {
         </div>
       </section>
 
-      <SectionRegiones parentSlug="inspired-by" />
-      <SectionPaisajes parentSlug="inspired-by" />
+      <SectionRegions parentSlug="inspired-by" />
+      <SectionLandscapes parentSlug="inspired-by" />
       <SectionTravelers />
-      <Sectionitineraries parentSlug="inspired-by" />
+      <SectionItineraries parentSlug="inspired-by" />
     </main>
   )
 }

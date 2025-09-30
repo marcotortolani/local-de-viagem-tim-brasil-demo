@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import { Pagination } from '@/components/pagination/Pagination'
 import { SkeletonCard, VerticalCard } from '@/components/VerticalCard'
 
+import dictionary from '@/dictionary/lang.json'
 
 type Props = {
   category: Category
@@ -23,7 +24,6 @@ export const SectionGridPagination: React.FC<Props> = ({
   const [loading, setLoading] = useState(true)
   const [pages, setPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(0)
-  
 
   const url =
     parentSlug === '/' ? category.slug : `${parentSlug}/${category.slug}`
@@ -43,7 +43,6 @@ export const SectionGridPagination: React.FC<Props> = ({
     getPosts()
   }, [category, currentPage])
 
-
   const content = loading ? (
     // <Loading />
     <div className=" mb-4 lg:mb-6 xl:mb-10 pt-2">
@@ -58,16 +57,12 @@ export const SectionGridPagination: React.FC<Props> = ({
       {posts.length ? (
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 xl:gap-8">
           {posts.map((item, key) => (
-            <VerticalCard
-              item={item}
-              key={key}
-              categorySlug={url || ''}
-            />
+            <VerticalCard item={item} key={key} categorySlug={url || ''} />
           ))}
         </div>
       ) : (
         <div className="w-4/5 max-w-[300px] mx-auto text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary['No content available']}
         </div>
       )}
     </div>

@@ -9,6 +9,8 @@ import Default from '/public/images/default.webp'
 import Image from 'next/image'
 import { wpImage } from '@/lib/api/wp/wp-utils'
 
+import dictionary from '@/dictionary/lang.json'
+
 type PageProps = Promise<{ category: string; slug: string }>
 
 export default async function Page({ params }: { params: PageProps }) {
@@ -71,7 +73,7 @@ export default async function Page({ params }: { params: PageProps }) {
           className="text-white my-2 font-normal text-sm leading-[1.3rem] md:text-[1rem] md:leading-[1.45rem]"
         ></div>
         <VideoCarousel
-          title="También te puede interesar"
+          title={dictionary['You may also be interested in']}
           items={videos.slice(0, 10)}
           moreLink={`/${category}`}
         />

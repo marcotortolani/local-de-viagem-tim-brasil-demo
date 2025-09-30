@@ -5,9 +5,11 @@ import { sanitizeContent } from '@/lib/utils'
 import { Container } from '@/components/Container'
 import { VideoCarousel } from '@/components/home/VideoCarousel'
 import { CATEGORIES, REGION_TAGS } from '@/lib/constants'
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import { VideoItem } from '@/components/video/VideoItem'
 import { SharedAndFavoriteVideoComponent } from '@/components/SharedAndFavoriteVideoComponent'
+import Breadcrumb from '@/components/ui/Breadcrumb'
+
+import dictionary from '@/dictionary/lang.json'
 
 type PageProps = Promise<{ slug: string }>
 
@@ -36,7 +38,7 @@ export default async function Page({ params }: { params: PageProps }) {
   return (
     <main className="mt-[5rem] md:mt-[6rem] pb-16 bg-primary/80">
       <div className=" w-full max-w-screen-xl mx-auto ">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
       </div>
 
       <div className="relative w-full max-w-screen-xl px-2 mx-auto flex justify-center my-4 ">
@@ -69,7 +71,7 @@ export default async function Page({ params }: { params: PageProps }) {
 
         <div className=" w-full h-0.5 mt-10 bg-black "></div>
         <VideoCarousel
-          title="También te puede interesar"
+          title={dictionary['You may also be interested in']}
           items={postsInterest}
           moreLink={`/checklist`}
         />

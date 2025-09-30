@@ -8,6 +8,8 @@ import { Post } from '@/lib/api/wp/wp-types'
 import { FavoriteEditorialSectionItem } from '@/components/favorites/FavoriteEditorialSectionItem'
 import { SectionTitle } from '@/components/text/SectionTitle'
 
+import dictionary from '@/dictionary/lang.json'
+
 type FavoriteEditorialSectionProps = {
   title?: string
   moreLink?: string
@@ -29,7 +31,7 @@ export const FavoriteEditorialSection: React.FC<
             href={moreLink}
             className="text-white text-xs md:text-[16px]  font-normal flex items-center"
           >
-            Ver más <ChevronRight size={20} className="ml-1" />
+            {dictionary['See more']} <ChevronRight size={20} className="ml-1" />
           </Link>
         )}
       </div>
@@ -73,7 +75,7 @@ export const FavoriteEditorialSection: React.FC<
         </Swiper>
       ) : (
         <div className="text-white text-center bg-neutral-500 py-4 rounded-xl ">
-          No tienes notas disponibles
+          {dictionary['No notes available']}
         </div>
       )}
     </div>

@@ -8,14 +8,12 @@ type TravelerBannerProps = {
   urlTravelerImage?: string
   urlLastPostImage?: string
   name?: string
-  // subtitle?: string
 }
 
 export const TravelerBanner: React.FC<TravelerBannerProps> = ({
   urlTravelerImage = '',
   urlLastPostImage = '',
   name = '',
-  // subtitle = 'Conocé a nuestros travelers y acompañalos a recorrer diferentes culturas, costumbres, sabores, paisajes y mucho más!',
 }) => {
   return (
     <div className="relative w-full h-[210px] md:h-[500px] mb-4 overflow-hidden">
@@ -67,9 +65,6 @@ export const TravelerBanner: React.FC<TravelerBannerProps> = ({
               {name}
             </h2>
           </div>
-          {/* <p className=" text-white font-normal text-[10px] mb-3 leading-[12px] text-balance capitalize md:text-lg">
-            {subtitle}
-          </p> */}
         </div>
       </div>
     </div>

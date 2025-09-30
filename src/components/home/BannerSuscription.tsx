@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation'
 import { ValidationContext } from '@/providers/validation-provider'
 import Image from 'next/image'
 
+import dictionary from '@/dictionary/lang.json'
+
 const urlLanding = process.env.NEXT_PUBLIC_LANDING_SUBSCRIPTION || '/subscribe'
 
 export default function BannerSuscription() {
@@ -31,30 +33,30 @@ export default function BannerSuscription() {
         <Image
           className=" w-full h-full object-cover object-center rounded-[inherit] "
           src="/images/bg-banner-suscription.webp"
-          alt="Background Banner Suscription"
+          alt="Background Banner Subscription"
           fill
         />
         <div className="z-20 w-full h-full p-2 bg-gradient-to-b from-black/20 via-black/40 to-black/60 flex items-center justify-center gap-4 md:gap-6 rounded-lg lg:rounded-xl xl:rounded-3xl ">
           <Image
             className=" w-1/4 min-w-16 md:h-20 md:w-auto xl:h-24 "
             src="/images/logo-product-white.webp"
-            alt="Logo Que Guay Viajes"
+            alt={`Logo ${dictionary['site']}`}
             width={61}
             height={43}
           />
           <div className="w-fit md:w-3/5 xl:w-2/5 h-full flex flex-col items-center justify-center gap-2  ">
             <p className="w-full font-oswald tracking-wide text-white text-left md:text-center text-base md:text-2xl xl:text-3xl font-semibold ">
-              ¿Aún no formas parte de Que Guay?
+              {dictionary["Haven't joined yet?"]}
             </p>
             <div className=" flex items-center justify-start gap-2 md:justify-center">
               <p className=" xl:w-full font-oswald italic text-white w-2/4 text-sm md:text-xl xl:text-2xl font-light leading-3 md:leading-[1.1]  ">
-                Disfruta de todo nuestro contenido exclusivo
+                {dictionary['Enjoy all our exclusive content']}
               </p>
               <button
                 type="button"
                 className=" xl:hidden px-3 py-1 md:px-5 bg-secondary-dark hover:bg-secondary font-oswald text-white uppercase text-sm md:text-2xl font-normal italic rounded-full"
               >
-                Suscríbete
+                {dictionary['Subscribe']}
               </button>
             </div>
           </div>
@@ -62,7 +64,7 @@ export default function BannerSuscription() {
             type="button"
             className=" hidden xl:flex px-3 py-1 md:px-5 xl:px-6 bg-secondary-dark hover:bg-secondary font-oswald text-white uppercase text-sm md:text-2xl font-normal italic rounded-full"
           >
-            Suscríbete
+            {dictionary['Subscribe']}
           </button>
         </div>
       </div>

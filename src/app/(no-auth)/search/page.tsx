@@ -24,7 +24,9 @@ import {
   DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu'
-import { REGION_TAGS, DESTINO_TAGS, CHECKLIST_TAGS } from '@/lib/constants'
+import { REGION_TAGS, DESTINATION_TAGS, CHECKLIST_TAGS } from '@/lib/constants'
+
+import dictionary from '@/dictionary/lang.json'
 
 const PER_PAGE = 12
 
@@ -37,13 +39,13 @@ const Page = () => {
 
   // Estados separados para cada tipo de filtro
   const [regionTags, setRegionTags] = useState<number[]>([])
-  const [destinoTags, setDestinoTags] = useState<number[]>([])
+  const [destinationTags, setDestinationTags] = useState<number[]>([])
   const [checklistTags, setChecklistTags] = useState<number[]>([])
 
   // Función para manejar la selección de tags por tipo
   const handleTagSelection = (
     tagId: number,
-    tagType: 'region' | 'destino' | 'checklist',
+    tagType: 'region' | 'destination' | 'checklist',
   ) => {
     setCurrentPage(0)
 
@@ -55,8 +57,8 @@ const Page = () => {
             : [...prev, tagId],
         )
         break
-      case 'destino':
-        setDestinoTags((prev) =>
+      case 'destination':
+        setDestinationTags((prev) =>
           prev.includes(tagId)
             ? prev.filter((id) => id !== tagId)
             : [...prev, tagId],
@@ -73,15 +75,15 @@ const Page = () => {
   }
 
   // Función para limpiar filtros específicos
-  const clearFilters = (type?: 'region' | 'destino' | 'checklist') => {
+  const clearFilters = (type?: 'region' | 'destination' | 'checklist') => {
     setCurrentPage(0)
     if (type) {
       switch (type) {
         case 'region':
           setRegionTags([])
           break
-        case 'destino':
-          setDestinoTags([])
+        case 'destination':
+          setDestinationTags([])
           break
         case 'checklist':
           setChecklistTags([])
@@ -90,20 +92,24 @@ const Page = () => {
     } else {
       // Limpiar todos
       setRegionTags([])
-      setDestinoTags([])
+      setDestinationTags([])
       setChecklistTags([])
     }
   }
 
   // Función para convertir todos los tags seleccionados a string
   const getAllSelectedTagsAsString = () => {
-    const allSelectedTags = [...regionTags, ...destinoTags, ...checklistTags]
+    const allSelectedTags = [
+      ...regionTags,
+      ...destinationTags,
+      ...checklistTags,
+    ]
 
     if (allSelectedTags.length === 0) {
       // Si no hay filtros, incluir todos los tags disponibles
       const allTags = [
         ...REGION_TAGS.map((tag) => tag.id),
-        ...DESTINO_TAGS.map((tag) => tag.id),
+        ...DESTINATION_TAGS.map((tag) => tag.id),
         ...CHECKLIST_TAGS.map((tag) => tag.id),
       ]
       return allTags.join(',')
@@ -124,13 +130,13 @@ const Page = () => {
       setPages(data.totalPages)
       setLoading(false)
     },
-    [regionTags, destinoTags, checklistTags, currentPage],
+    [regionTags, destinationTags, checklistTags, currentPage],
   )
 
   useEffect(() => {
     setLoading(true)
     callback(search, currentPage)
-  }, [search, currentPage, regionTags, destinoTags, checklistTags])
+  }, [search, currentPage, regionTags, destinationTags, checklistTags])
 
   // Componente para el dropdown de filtros
   const FilterDropdown = ({
@@ -146,7 +152,7 @@ const Page = () => {
     selectedTags: number[]
     onTagSelect: (tagId: number) => void
     onClear: () => void
-    // type: 'region' | 'destino' | 'checklist'
+    // type: 'region' | 'destination' | 'checklist'
   }) => (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -174,7 +180,7 @@ const Page = () => {
               onClick={onClear}
               className="text-red-600 hover:text-red-700 font-medium"
             >
-              Limpiar {title}
+              {dictionary['Clear']} {title}
             </DropdownMenuItem>
             <div className="border-b my-1" />
           </>
@@ -208,12 +214,14 @@ const Page = () => {
   )
 
   const hasActiveFilters =
-    regionTags.length > 0 || destinoTags.length > 0 || checklistTags.length > 0
+    regionTags.length > 0 ||
+    destinationTags.length > 0 ||
+    checklistTags.length > 0
 
   return (
     <main className="mt-[5rem] md:mt-[6rem] pb-20 bg-primary">
       <div className="w-full max-w-screen-xl md:pt-2 md:px-4 md:mx-auto mb-4">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
         <Input
           Icon={Search}
           className="bg-primary-light/40 w-full h-[50px] mt-4 border-none rounded-none text-white md:rounded-md placeholder:text-white indent-2 placeholder:text-[16px] placeholder:font-normal"
@@ -222,7 +230,7 @@ const Page = () => {
             setSearch(e.target.value)
             setCurrentPage(0)
           }}
-          placeholder="Ingrese su búsqueda"
+          placeholder={dictionary['Enter your search']}
           handleCloseIcon={() => setSearch('')}
         />
       </div>
@@ -253,15 +261,15 @@ const Page = () => {
               >
                 <p>
                   {hasActiveFilters
-                    ? 'Limpiar Todos los Filtros'
-                    : 'Sin filtros activos'}
+                    ? dictionary['Clear All Filters']
+                    : dictionary['No Active Filters']}
                 </p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
 
           <FilterDropdown
-            title="Regiones"
+            title={dictionary['Regions']}
             tags={REGION_TAGS}
             selectedTags={regionTags}
             onTagSelect={(tagId) => handleTagSelection(tagId, 'region')}
@@ -270,16 +278,16 @@ const Page = () => {
           />
 
           <FilterDropdown
-            title="Destinos"
-            tags={DESTINO_TAGS}
-            selectedTags={destinoTags}
-            onTagSelect={(tagId) => handleTagSelection(tagId, 'destino')}
-            onClear={() => clearFilters('destino')}
-            // type="destino"
+            title={dictionary['Destinations']}
+            tags={DESTINATION_TAGS}
+            selectedTags={destinationTags}
+            onTagSelect={(tagId) => handleTagSelection(tagId, 'destination')}
+            onClear={() => clearFilters('destination')}
+            // type="destination"
           />
 
           <FilterDropdown
-            title="Checklist"
+            title={dictionary['Checklists']}
             tags={CHECKLIST_TAGS}
             selectedTags={checklistTags}
             onTagSelect={(tagId) => handleTagSelection(tagId, 'checklist')}
@@ -291,7 +299,9 @@ const Page = () => {
         {/* Mostrar tags seleccionados */}
         {hasActiveFilters && (
           <div className="flex flex-wrap items-center gap-1 text-xs">
-            <span className="text-white/70">Filtros activos:</span>
+            <span className="text-white/70">
+              {dictionary['Active Filters']}:
+            </span>
             {regionTags.map((tagId) => {
               const tag = REGION_TAGS.find((t) => t.id === tagId)
               return tag ? (
@@ -303,11 +313,11 @@ const Page = () => {
                 </span>
               ) : null
             })}
-            {destinoTags.map((tagId) => {
-              const tag = DESTINO_TAGS.find((t) => t.id === tagId)
+            {destinationTags.map((tagId) => {
+              const tag = DESTINATION_TAGS.find((t) => t.id === tagId)
               return tag ? (
                 <span
-                  key={`destino-${tag.id}`}
+                  key={`destination-${tag.id}`}
                   className="px-2 py-1 bg-tertiary/30 text-tertiary-dark rounded-full"
                 >
                   #{tag.name}
@@ -329,7 +339,7 @@ const Page = () => {
         )}
       </div>
       <Container className=" ">
-        {!search && <SectionTitle>Sugerencias</SectionTitle>}
+        {!search && <SectionTitle>{dictionary['Sugestions']}</SectionTitle>}
         {content}
         <Pagination
           pages={pages}

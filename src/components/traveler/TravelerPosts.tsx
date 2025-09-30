@@ -1,13 +1,13 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Category, Post } from '@/lib/api/wp/wp-types'
-
 import { getWpPosts } from '@/lib/api/wp/wp-actions'
 import { Container } from '@/components/Container'
 import { TravelerBanner } from '../TravelerBanner'
-
 import { SectionGridPagination } from '../sections/SectionGridPagination'
 import Breadcrumb from '../ui/Breadcrumb'
+
+import dictionary from '@/dictionary/lang.json'
 
 type Props = {
   category: Category
@@ -36,7 +36,7 @@ export const TravelerPosts: React.FC<Props> = ({ category }) => {
     <main className="z-0 mt-[5rem] md:mt-[6rem] min-h-screen pb-20 bg-primary/80 ">
       <div className=" absolute top-0 w-full ">
         <div className=" w-full max-w-screen-xl mx-auto px-2 lg:px-4">
-          <Breadcrumb homeElement="Inicio" />
+          <Breadcrumb homeElement={dictionary['Home']} />
         </div>
       </div>
       <TravelerBanner

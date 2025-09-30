@@ -8,7 +8,9 @@ import { Container } from '@/components/Container'
 import { SectionTitle } from '@/components/text/SectionTitle'
 import { ShortPosterItem } from '@/components/short/ShortPosterItem'
 import { Pagination } from '@/components/pagination/Pagination'
-//import Loading from '@/components/Loading'
+
+import dictionary from '@/dictionary/lang.json'
+
 const Loading = dynamic(() => import('@/components/Loading'), {
   ssr: false,
 })
@@ -52,7 +54,7 @@ export default function Page() {
         </div>
       ) : (
         <div className="text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes shorts disponible
+          {dictionary['No shorts available']}
         </div>
       )}
     </div>
@@ -60,7 +62,7 @@ export default function Page() {
 
   return (
     <Container className="pt-24 pb-24">
-      <SectionTitle>Shorts favoritos</SectionTitle>
+      <SectionTitle>{dictionary['Favorite shorts']}</SectionTitle>
       {content}
       <Pagination
         pages={pages}

@@ -1,9 +1,9 @@
 import React from 'react'
-
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import Image from 'next/image'
-
 import { SectionChecklist } from '@/components/checklist/SectionChecklist'
+import Breadcrumb from '@/components/ui/Breadcrumb'
+
+import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
   return (
@@ -28,19 +28,25 @@ export default async function Page() {
           <div className="z-20 relative w-full max-w-screen-xl mx-auto h-full lg:h-fit pb-4  flex flex-col items-center justify-end xl:flex-row lg:items-center xl:justify-center gap-4 xl:gap-8 ">
             <h2 className=" flex items-end lg:items-center  gap-2 ">
               <span className=" font-sign-painter text-4xl md:text-5xl xl:text-6xl font-light text-tertiary">
-                Descubre
+                {dictionary['Discover']}
               </span>{' '}
               <span className=" mb-2 italic font-normal font-oswald text-4xl lg:text-5xl xl:text-6xl text-white">
-                Checklist
+                {dictionary['Checklist']}
               </span>
             </h2>
             <div className="z-10 relative w-[95%] sm:max-w-md md:max-w-lg 2xl:max-w-2xl px-8 py-4 lg:px-10 xl:px-12 bg-black/50 rounded-3xl">
               <p className=" font-oswald italic text-white text-base md:text-xl lg:text-2xl font-extralight">
-                Desde consejos para empacar hasta recomendaciones para explorar
-                nuevos lugares.{' '}
+                {
+                  dictionary[
+                    'From packing tips to recommendations for exploring new places'
+                  ]
+                }{' '}
                 <span className=" not-italic font-normal">
-                  Descubre los secretos mejor guardados de los travelers
-                  experimentados.
+                  {
+                    dictionary[
+                      'Discover the best-kept secrets of experienced travelers'
+                    ]
+                  }
                 </span>
               </p>
             </div>
@@ -51,7 +57,7 @@ export default async function Page() {
         </div>
 
         <div className=" hidden lg:flex">
-          <Breadcrumb homeElement="Inicio" />
+          <Breadcrumb homeElement={dictionary['Home']} />
         </div>
       </section>
 

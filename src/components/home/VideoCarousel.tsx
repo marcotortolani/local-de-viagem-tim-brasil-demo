@@ -7,6 +7,8 @@ import { Post } from '@/lib/api/wp/wp-types'
 import { SectionTitle } from '@/components/text/SectionTitle'
 import SeeMore from '../ui/see-more'
 
+import dictionary from '@/dictionary/lang.json'
+
 type VideoCarouselProps = {
   title?: string
   moreLink?: string
@@ -27,7 +29,7 @@ export const VideoCarousel: React.FC<VideoCarouselProps> = ({
     <div className=" mt-6">
       <div className="flex items-center justify-between md:mb-4">
         <SectionTitle color={color}>{title}</SectionTitle>
-        <SeeMore moreLink={moreLink} text="Ver más" />
+        <SeeMore moreLink={moreLink} text={dictionary['See more']} />
       </div>
 
       <Swiper

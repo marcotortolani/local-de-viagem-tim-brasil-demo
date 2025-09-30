@@ -1,10 +1,9 @@
-import React from 'react'
-
-import Breadcrumb from '@/components/ui/Breadcrumb'
 import Image from 'next/image'
+import { SectionFlavorsOfTheWorld } from '@/components/culture-and-flavor/SectionFlavorsOfTheWorld'
+import { SectionBehindTheMap } from '@/components/culture-and-flavor/SectionBehindTheMap'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 
-import { SectionSaboresDelMundo } from '@/components/cultura-paladar/SectionSaboresDelMundo'
-import { SectionDetrasDelMapa } from '@/components/cultura-paladar/SectionDetrasDelMapa'
+import dictionary from '@/dictionary/lang.json'
 
 export default async function Page() {
   return (
@@ -29,21 +28,24 @@ export default async function Page() {
           <div className="z-20 relative w-full max-w-screen-xl mx-auto h-full lg:h-fit md:pb-4  flex flex-col items-center justify-end xl:flex-row lg:items-center xl:justify-center gap-2 md:gap-4 xl:gap-8 ">
             <h2 className=" flex items-end lg:items-center  gap-2 ">
               <span className=" font-sign-painter text-4xl md:text-5xl xl:text-6xl font-light text-neutral-700">
-                Cultura &
+                {dictionary['Culture']} &
               </span>{' '}
               <span className=" mb-2 italic font-normal font-oswald text-4xl lg:text-5xl xl:text-6xl text-white">
-                Paladar
+                {dictionary['Flavor']}
               </span>
             </h2>
             <div className="z-10 relative w-[95%] sm:max-w-md md:max-w-screen-md 2xl:max-w-2xl px-2 py-2 md:px-8 md:py-4 lg:px-10 xl:px-12 bg-black/50 rounded-2xl md:rounded-3xl">
               <p className=" font-oswald italic text-white text-base md:text-xl lg:text-2xl font-extralight">
-                Bienvenidos a{' '}
+                {dictionary['Welcome to']}{' '}
                 <span className=" not-italic font-normal">
-                  Cultura y Paladar
+                  {dictionary['Culture and Flavor']}
                 </span>
-                , donde cada receta te transporta a un rincón diferente del
-                planeta, conocé la cultura y costumbres culinarias de diferentes
-                regiones del mundo.
+                ,{' '}
+                {
+                  dictionary[
+                    'where every recipe transports you to a different corner of the planet. Discover the culinary culture and customs of different world regions.'
+                  ]
+                }
               </p>
             </div>
           </div>
@@ -53,12 +55,12 @@ export default async function Page() {
         </div>
 
         <div className=" hidden lg:flex">
-          <Breadcrumb homeElement="Inicio" />
+          <Breadcrumb homeElement={dictionary['Home']} />
         </div>
       </section>
 
-      <SectionSaboresDelMundo parentSlug="cultura-y-paladar" />
-      <SectionDetrasDelMapa parentSlug="cultura-y-paladar" />
+      <SectionFlavorsOfTheWorld parentSlug="culture-and-flavor" />
+      <SectionBehindTheMap parentSlug="culture-and-flavor" />
     </main>
   )
 }

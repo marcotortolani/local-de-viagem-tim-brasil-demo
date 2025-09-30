@@ -13,7 +13,7 @@ type VideoPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
 // Props for the GridComponent
 interface GridProps {
   items: {
-    video: string
+    vimeoVideo: string
     videoFrame: string
     imageH: string
     imageV: string
@@ -84,8 +84,6 @@ export const BannerGridVideo: React.FC<GridProps> = ({
   const { videoGridArea, image1GridArea, image2GridArea } =
     getGridStyles(videoPosition)
 
-  if (!items.video) return <div></div>
-
   return (
     <div
       className={cn(
@@ -106,7 +104,7 @@ export const BannerGridVideo: React.FC<GridProps> = ({
           <Image
             className="w-full h-full object-cover transition-opacity duration-300"
             src={items.videoFrame}
-            alt="Vista previa del video"
+            alt="Preview image of video"
             fill
             priority
           />
@@ -119,7 +117,7 @@ export const BannerGridVideo: React.FC<GridProps> = ({
         >
           <ReactPlayer
             ref={playerRef}
-            url={items.video}
+            url={items.vimeoVideo}
             width="180%"
             height="100%"
             className=" aspect-square"
@@ -140,7 +138,7 @@ export const BannerGridVideo: React.FC<GridProps> = ({
         >
           <ReactPlayer
             ref={playerRef}
-            url={items.video}
+            url={items.vimeoVideo}
             width="100%"
             height="100%"
             playing={true}
@@ -153,24 +151,10 @@ export const BannerGridVideo: React.FC<GridProps> = ({
           />
         </div>
         {children}
-        {/* <div className=" absolute bottom-0 right-4 ">
-            <SeeMore
-              moreLink={moreLink}
-              text="Ver más"
-              className=" lg:text-lg 2xl:text-xl"
-            />
-          </div> */}
       </motion.div>
 
       {/* Image 1: 2x1 - Horizontal*/}
       <motion.div
-        // initial={{
-        //   opacity: 0,
-        //   scale: 0,
-        //   transformOrigin: 'center',
-        //   x: '100%',
-        //   y: '-100%',
-        // }}
         initial={{
           opacity: 1,
           scale: 1,
@@ -211,13 +195,6 @@ export const BannerGridVideo: React.FC<GridProps> = ({
 
       {/* Image 2: 1x3 - Vertical */}
       <motion.div
-        // initial={{
-        //   opacity: 0,
-        //   scale: 0,
-        //   transformOrigin: 'center',
-        //   x: '-100%',
-        //   y: '100%',
-        // }}
         initial={{
           opacity: 1,
           scale: 1,
@@ -258,11 +235,6 @@ export const BannerGridVideo: React.FC<GridProps> = ({
 
       {extraItems && (
         <motion.div
-          // initial={{
-          //   opacity: 0,
-          //   scale: 0,
-          //   y: '200%',
-          // }}
           initial={{
             opacity: 1,
             scale: 1,

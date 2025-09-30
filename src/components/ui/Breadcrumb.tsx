@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronRight, HomeIcon } from 'lucide-react'
 
+import dictionary from '@/dictionary/lang.json'
+
 export default function Breadcrumb({ homeElement }: { homeElement: string }) {
   const paths = usePathname()
   const pathNames = paths
@@ -25,11 +27,11 @@ export default function Breadcrumb({ homeElement }: { homeElement: string }) {
       }
     >
       <ul className=" w-full h-full px-2 bg-slate-300/50 flex flex-wrap md:bg-slate-300/0">
-        {pathNames.slice(0, 3).map((el, i) => (
+        {pathNames?.slice(0, 3).map((el, i) => (
           <li key={i} className=" my-1 flex items-center">
             <Link
               className={`${activePath === el ? 'bg-secondary hover:bg-secondary/80 ' : ' bg-primary hover:bg-primary/80'} ${
-                el === 'Inicio' ? 'px-1  ' : 'px-4'
+                el === dictionary["Home"] ? 'px-1  ' : 'px-4'
               } text-white/80 border border-white py-1 capitalize font-medium text-xs md:text-base cursor-pointer rounded-full`}
               href={`${
                 el === 'editorial' || el === 'videos'
@@ -44,7 +46,7 @@ export default function Breadcrumb({ homeElement }: { homeElement: string }) {
               }`}
               target="_self"
             >
-              {el === 'Inicio' ? (
+              {el === dictionary["Home"] ? (
                 <>
                   <div className=" w-5 h-5 p-[0.1rem] aspect-square flex md:hidden items-center justify-center">
                     <HomeIcon />

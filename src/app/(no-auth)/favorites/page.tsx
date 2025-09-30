@@ -9,6 +9,8 @@ import { FavoriteVideoSection } from '@/components/favorites/FavoriteVideoSectio
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import { FavoriteShortSection } from '@/components/favorites/FavoriteShortSection'
 
+import dictionary from '@/dictionary/lang.json'
+
 export default function Page() {
   const { editorial, videos, shorts } = useFavoriteStore()
   const [editorialPosts, setEditorialPosts] = useState<Post[]>([])
@@ -49,25 +51,25 @@ export default function Page() {
   return (
     <main className=" relative z-0 w-full h-full mt-[5rem] md:mt-[6rem] lg:pt-2 pb-32 bg-primary/80 ">
       <div className=" w-full max-w-screen-xl mx-auto lg:pl-4 ">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
       </div>
       <Container className="pt-4 pb-4 md:pb-40 space-y-4 md:space-y-10 lg:px-6">
         <FavoriteEditorialSection
-          title="Editoriales favoritos"
+          title={dictionary['Favorite editorials']}
           items={editorialPosts}
           color="text-white"
           moreLink="/favorites/editorial"
         />
         <FavoriteVideoSection
+          title={dictionary['Favorite videos']}
           items={videoPosts}
-          title="Videos favoritos"
           color="text-white"
           moreLink="/favorites/videos"
         />
 
         <FavoriteShortSection
+          title={dictionary['Favorite shorts']}
           items={shortsPosts}
-          title="Shorts favoritos"
           color="text-white"
           moreLink="/favorites/shorts"
         />
@@ -80,11 +82,11 @@ const SkeletonComponent = () => {
   return (
     <main className=" w-full h-full mt-[5rem] md:mt-[6rem] lg:pt-2 bg-primary/80">
       <div className=" w-full max-w-screen-xl mx-auto lg:pl-4">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
       </div>
       <Container className="pt-4 pb-4 md:pb-40 space-y-4 md:space-y-10 lg:px-6">
         <div className="text-white text-center bg-neutral-500 py-4 rounded-xl animate-pulse">
-          No tienes favoritos disponibles
+          {dictionary['No favorites available']}
         </div>
       </Container>
     </main>

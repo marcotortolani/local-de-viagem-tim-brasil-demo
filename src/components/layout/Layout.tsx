@@ -38,7 +38,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         'wp-category-slug': '',
         'wp-category-id': 0,
       },
-      validatorActive: true,
+      validatorActive: false,
     })
   }, [])
 

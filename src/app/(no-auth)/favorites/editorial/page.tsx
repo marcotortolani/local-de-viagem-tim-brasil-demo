@@ -10,6 +10,8 @@ import { Pagination } from '@/components/pagination/Pagination'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import { FavoriteEditorialSectionItem } from '@/components/favorites/FavoriteEditorialSectionItem'
 
+import dictionary from '@/dictionary/lang.json'
+
 // const Loading = dynamic(() => import('@/components/Loading'), {
 //   ssr: false,
 // })
@@ -59,7 +61,7 @@ export default function Page() {
         </div>
       ) : (
         <div className="text-white text-center bg-neutral-500 py-4 rounded-xl ">
-          No tienes contenido editorial disponible
+          {dictionary['No editorial content available']}
         </div>
       )}
     </div>
@@ -68,10 +70,10 @@ export default function Page() {
   return (
     <main className=" w-full h-full mt-[5rem] md:mt-[6rem] lg:pt-2 bg-primary/80 ">
       <div className=" w-full max-w-screen-xl mx-auto lg:pl-4 ">
-        <Breadcrumb homeElement="Inicio" />
+        <Breadcrumb homeElement={dictionary['Home']} />
       </div>
       <Container className="pt-2 pb-24">
-        <SectionTitle>Editoriales Favoritos</SectionTitle>
+        <SectionTitle>{dictionary['Favorite editorials']}</SectionTitle>
         {content}
         <Pagination
           pages={pages}
