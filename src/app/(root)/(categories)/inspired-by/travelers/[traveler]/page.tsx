@@ -3,14 +3,14 @@ import { getWpCategories } from '@/lib/api/wp/wp-actions'
 import { notFound } from 'next/navigation'
 import { TravelerPosts } from '@/components/traveler/TravelerPosts'
 
-type PageProps = Promise<{ viajero: string }>
+type PageProps = Promise<{ traveler: string }>
 
 export default async function Page({ params }: { params: PageProps }) {
-  const { viajero } = await params
+  const { traveler } = await params
   const {
     categories: [category],
   } = await getWpCategories({
-    slug: viajero,
+    slug: traveler,
   })
 
   if (!category) notFound()

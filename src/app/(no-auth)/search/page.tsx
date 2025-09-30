@@ -268,14 +268,14 @@ const Page = () => {
             </Tooltip>
           </TooltipProvider>
 
-          <FilterDropdown
+          {/* <FilterDropdown
             title={dictionary['Regions']}
             tags={REGION_TAGS}
             selectedTags={regionTags}
             onTagSelect={(tagId) => handleTagSelection(tagId, 'region')}
             onClear={() => clearFilters('region')}
             // type="region"
-          />
+          /> */}
 
           <FilterDropdown
             title={dictionary['Destinations']}

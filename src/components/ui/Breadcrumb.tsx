@@ -54,7 +54,8 @@ export default function Breadcrumb({ homeElement }: { homeElement: string }) {
                   <span className=" hidden md:flex md:px-4 ">{el}</span>
                 </>
               ) : (
-                dictionary[el as keyof typeof dictionary]
+                dictionary[el as keyof typeof dictionary] ||
+                el.replaceAll('-', ' ')
               )}
             </Link>
             {i + 1 < pathNames.length && i < 2 && (

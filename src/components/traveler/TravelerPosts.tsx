@@ -7,6 +7,8 @@ import { TravelerBanner } from '../TravelerBanner'
 import { SectionGridPagination } from '../sections/SectionGridPagination'
 import Breadcrumb from '../ui/Breadcrumb'
 
+import { htmlToText } from 'html-to-text'
+
 import dictionary from '@/dictionary/lang.json'
 
 type Props = {
@@ -40,9 +42,9 @@ export const TravelerPosts: React.FC<Props> = ({ category }) => {
         </div>
       </div>
       <TravelerBanner
-        urlTravelerImage={category.image}
+        urlTravelerImage={category?.image}
         urlLastPostImage={posts[0]?.featured_image[0]}
-        name={category.name}
+        name={htmlToText(category?.name || '')}
       />
       <Container className=" px-0 lg:px-6 xl:px-3 min-h-fit">
         <SectionGridPagination
