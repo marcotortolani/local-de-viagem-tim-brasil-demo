@@ -6,7 +6,7 @@ import { ValidationContext } from '@/providers/validation-provider'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { getParagraphText } from '@/lib/utils'
-
+import { htmlToText } from 'html-to-text'
 import { Category, Post } from '@/lib/api/wp/wp-types'
 
 import Default from '/public/images/default.webp'
@@ -158,7 +158,7 @@ export const CarouselHome: FC<CarouselHomeProps> = ({ posts, categories }) => {
                           {dictionary['Inspired By Brazil']}
                         </h4>
                         <h3 className="w-full mb-2 text-white text-left text-5xl md:text-6xl lg:text-[4rem] leading-[1.2] lg:leading-[1.28] line-clamp-2 md:line-clamp-3 lg:line-clamp-2 font-oswald font-normal">
-                          {title?.rendered}
+                          {htmlToText(title?.rendered || '')}
                         </h3>
                         {excerpt?.rendered && (
                           <p className=" line-clamp-4 md:line-clamp-none text-sm lg:text-lg text-left text-pretty font-poppins font-light text-white ">
