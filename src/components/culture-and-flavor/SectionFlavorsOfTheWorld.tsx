@@ -8,6 +8,8 @@ import { SkeletonCard, VerticalCard } from '@/components/VerticalCard'
 import { Separator } from '../ui/separator'
 import { CATEGORIES } from '@/lib/constants'
 
+import dictionary from '@/dictionary/lang.json'
+
 type Props = {
   parentSlug?: string
 }
@@ -59,7 +61,7 @@ export const SectionFlavorsOfTheWorld: React.FC<Props> = ({
         </div>
       ) : (
         <div className="w-4/5 max-w-[300px] mx-auto text-black text-center bg-white py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary['No content available']}
         </div>
       )}
     </div>
@@ -72,10 +74,10 @@ export const SectionFlavorsOfTheWorld: React.FC<Props> = ({
         <div className="w-full flex items-center justify-between">
           <h2 className=" flex items-center gap-2  ">
             <span className=" font-sign-painter text-4xl xl:text-5xl font-light text-neutral-600/70">
-              Sabores del
+              {dictionary['Flavors of the']}
             </span>{' '}
-            <span className=" mb-2 xl:mb-3 italic font-normal font-oswald text-3xl lg:text-4xl xl:text-5xl text-white">
-              Mundo
+            <span className=" mb-2 xl:mb-3 capitalize italic font-normal font-oswald text-3xl lg:text-4xl xl:text-5xl text-white">
+              {dictionary['world']}
             </span>
           </h2>
         </div>

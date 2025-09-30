@@ -40,6 +40,8 @@
   "Traveling the world":"Recorriendo el mundo",
   "Destinations":"Destinos",
   "Flavors of the world":"Sabores del mundo",
+  "Flavors of the": "Sabores del",
+  "world": "mundo",
   "The latest from":"Lo último de",
   "Behing the map":"Detrás del mapa",
   "Favorite editorials":"Editoriales favoritos",
@@ -97,6 +99,15 @@
   "Information": "Información",
   "Organization": "Organización",
   "Travel": "Viajes",
-  "Budget":"Presupuesto"
-  
+  "Budget":"Presupuesto",
+  "destinations-of-the-month":"destinos del mes",
+  "around-the-world":"por el mundo",
+  "culture-and-flavor":"cultura y paladar",
+  "inspired-by":"inspirado por",
+  "favorites":"favoritos",
+  "search": "búsqueda",
+  "video":"video",
+  "videos":"videos",
+  "editorial":"editorial",
+  "editoriales":"editoriales"
 }

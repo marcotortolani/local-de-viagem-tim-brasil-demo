@@ -70,15 +70,15 @@ export const SectionRegions: React.FC<Props> = ({ parentSlug = '' }) => {
   useEffect(() => {
     setLoading(true)
     const getPosts = async () => {
-      const regionesDestacadas = await getWpPosts({
+      const featuredRegions = await getWpPosts({
         categories: CATEGORIES['inspired-by'].toString(),
         per_page: PER_PAGE,
         tags: convertTagsToString({ tagsSelected }),
         offset: PER_PAGE * currentPage,
       })
-      setPosts(regionesDestacadas.posts || [])
+      setPosts(featuredRegions.posts || [])
       setLoading(false)
-      setPages(regionesDestacadas.totalPages)
+      setPages(featuredRegions.totalPages)
     }
     getPosts()
   }, [currentPage, tagsSelected])

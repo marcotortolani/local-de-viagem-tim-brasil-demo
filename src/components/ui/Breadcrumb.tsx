@@ -31,7 +31,7 @@ export default function Breadcrumb({ homeElement }: { homeElement: string }) {
           <li key={i} className=" my-1 flex items-center">
             <Link
               className={`${activePath === el ? 'bg-secondary hover:bg-secondary/80 ' : ' bg-primary hover:bg-primary/80'} ${
-                el === dictionary["Home"] ? 'px-1  ' : 'px-4'
+                el === dictionary['Home'] ? 'px-1  ' : 'px-4'
               } text-white/80 border border-white py-1 capitalize font-medium text-xs md:text-base cursor-pointer rounded-full`}
               href={`${
                 el === 'editorial' || el === 'videos'
@@ -46,7 +46,7 @@ export default function Breadcrumb({ homeElement }: { homeElement: string }) {
               }`}
               target="_self"
             >
-              {el === dictionary["Home"] ? (
+              {el === dictionary['Home'] ? (
                 <>
                   <div className=" w-5 h-5 p-[0.1rem] aspect-square flex md:hidden items-center justify-center">
                     <HomeIcon />
@@ -54,7 +54,7 @@ export default function Breadcrumb({ homeElement }: { homeElement: string }) {
                   <span className=" hidden md:flex md:px-4 ">{el}</span>
                 </>
               ) : (
-                el.replaceAll('-', ' ')
+                dictionary[el as keyof typeof dictionary]
               )}
             </Link>
             {i + 1 < pathNames.length && i < 2 && (

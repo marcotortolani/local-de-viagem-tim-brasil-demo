@@ -7,6 +7,8 @@ import { htmlToText } from 'html-to-text'
 import { PlayIcon } from './video/PlayIcon'
 import { REGION_TAGS } from '@/lib/constants'
 
+import dictionary from '@/dictionary/lang.json'
+
 export const HorizontalCard2 = ({
   item,
   index,
@@ -44,7 +46,7 @@ export const HorizontalCard2 = ({
           <span
             className={`${isVideo ? 'bg-secondary' : 'bg-tertiary'} absolute top-4 left-4 px-2 py-0.5 lg:px-4 font-oswald italic text-sm lg:text-base border border-white rounded-full`}
           >
-            {isVideo ? 'Video' : 'Editorial'}
+            {isVideo ? dictionary['video'] : dictionary['editorial']}
           </span>
           {regionTag && (
             <span

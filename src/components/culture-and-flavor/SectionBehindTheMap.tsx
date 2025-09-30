@@ -11,6 +11,8 @@ import { SkeletonCard, VerticalCard } from '@/components/VerticalCard'
 import { Pagination } from '../pagination/Pagination'
 import { Separator } from '../ui/separator'
 
+import dictionary from '@/dictionary/lang.json'
+
 const ITEMS_GRID_DETRAS_DEL_MAPA = {
   vimeoVideo: GRID_VIDEOS['behind-the-map'],
   videoFrame: '/images/grid-detras-del-mapa/detras-del-mapa-video-preview.webp',
@@ -67,7 +69,7 @@ export function SectionBehindTheMap({ parentSlug }: Props) {
         </div>
       ) : (
         <div className="w-4/5 max-w-[300px] mx-auto text-black text-center bg-white py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary['No content available']}
         </div>
       )}
     </div>
@@ -87,10 +89,10 @@ export function SectionBehindTheMap({ parentSlug }: Props) {
           <div className=" absolute bottom-0 w-full h-2/3 pl-4 md:pl-6 lg:px-8 pb-4 md:pb-8 bg-gradient-to-b from-transparent via-black/40 to-black/90 flex flex-col items-start justify-end lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className=" flex flex-col items-start md:gap-1">
               <span className=" font-sign-painter text-4xl md:text-5xl xl:text-6xl font-light text-tertiary">
-                Descubre
+                {dictionary['Discover']}
               </span>{' '}
               <span className=" italic font-light font-oswald text-3xl sm:text-4xl md:text-5xl xl:text-6xl -mt-3 lg:pb-0 lg:pl-2 text-white">
-                Detrás del mapa
+                {dictionary['Behing the map']}
               </span>
             </h2>
           </div>

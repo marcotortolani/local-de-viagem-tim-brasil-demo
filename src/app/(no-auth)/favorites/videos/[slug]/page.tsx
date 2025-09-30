@@ -66,7 +66,7 @@ export default async function Page({ params }: { params: PageProps }) {
         <VideoCarousel
           title={dictionary['You may also be interested in']}
           items={postsInterest}
-          moreLink={`/culture-and-flavor/editorial`}
+          moreLink={`/culture-and-flavor`}
         />
       </Container>
     </main>

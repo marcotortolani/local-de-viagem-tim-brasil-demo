@@ -161,7 +161,7 @@ export const SectionDestinations: React.FC<Props> = ({ parentSlug = '' }) => {
                 }`}
                 onClick={() => handleTagSelected({ tagSelected: tag.id })}
               >
-                #{tag.slug}
+                #{tag.name}
               </button>
             ))}
           </div>

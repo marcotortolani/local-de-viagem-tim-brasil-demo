@@ -40,6 +40,8 @@
   "Traveling the world":"Travelling the world",
   "Destinations":"Destinations",
   "Flavors of the world":"Flavors of the world",
+  "Flavors of the": "Flavors of the",
+  "world": "world",
   "The latest from":"The latest from",
   "Behing the map":"Behing the map",
   "Favorite editorials":"Favorite editorials",
@@ -97,5 +99,15 @@
   "Information": "Information",
   "Organization": "Organization",
   "Travel": "Travel",
-  "Budget":"Budget"
+  "Budget":"Budget",
+  "destinations-of-the-month":"destinations of the month",
+  "around-the-world":"around the world",
+  "culture-and-flavor":"culture and flavor",
+  "inspired-by":"inspired by",
+  "favorites":"favorites",
+  "search": "search",
+  "video":"video",
+  "videos":"videos",
+  "editorial":"editorial",
+  "editoriales":"editorials"
 }

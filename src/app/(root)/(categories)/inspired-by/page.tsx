@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 import Breadcrumb from '@/components/ui/Breadcrumb'
-import { SectionRegions } from '@/components/inspired-by/SectionRegions'
+//import { SectionRegions } from '@/components/inspired-by/SectionRegions'
 import { SectionLandscapes } from '@/components/inspired-by/SectionLandscapes'
 import { SectionTravelers } from '@/components/inspired-by/SectionTravelers'
 import { SectionItineraries } from '@/components/inspired-by/SectionItineraries'
@@ -84,7 +84,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <SectionRegions parentSlug="inspired-by" />
+      {/* <SectionRegions parentSlug="inspired-by" /> */}
       <SectionLandscapes parentSlug="inspired-by" />
       <SectionTravelers />
       <SectionItineraries parentSlug="inspired-by" />
