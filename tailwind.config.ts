@@ -1,4 +1,4 @@
-import { sign } from "crypto"
+
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -71,6 +71,7 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
+        sans: ['var(--font-poppins)', 'sans-serif'],
         poppins: ['var(--font-poppins)', 'sans-serif'],
         oswald: ['var(--font-oswald)', 'sans-serif'],
         "sign-painter": ['SignPainter', 'sans-serif'],

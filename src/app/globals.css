@@ -67,9 +67,15 @@
     }
 }
 
-@font-face{
-    font-family: "SingPainter";
-    src: url("/public/fonts/signpainter_housescript.otf") format("opentype");
+@font-face {
+    font-family: "SignPainter";
+    src: url("/fonts/signpainter_housescript.woff2") format("woff2"),
+         url("/fonts/signpainter_housescript.woff") format("woff"),
+         url("/fonts/signpainter_housescript.ttf") format("truetype"),
+         url("/fonts/signpainter_housescript.otf") format("opentype"); /* Mantener OTF como último fallback */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Importante para el rendimiento */
 }
 
 @keyframes flipVertical {
