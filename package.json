@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 192.168.1.150 -p 3000 & npx next-video sync -w",
+    "dev": "next dev & npx next-video sync -w",
+    "dev:host": "next dev -H 192.168.1.150 -p 3000 & npx next-video sync -w",
     "dev:test": "NEXT_PUBLIC_OPERATOR_COUNTRY=test next dev -p 3605",
     "dev:tim-brasil": "NEXT_PUBLIC_OPERATOR_COUNTRY=tim-brasil next dev -p 3606",
     "build": "next build",
