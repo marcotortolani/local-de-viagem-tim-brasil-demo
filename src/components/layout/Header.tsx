@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -25,7 +25,6 @@ const Header: React.FC = () => {
   const pathname = usePathname()
   const pathnameSection = '/' + pathname.split('/')[1]
   const { openDialog } = useLayoutSidebarStore()
-  const [isOnTop, setIsOnTop] = useState(true)
   const { userEnabled } = useContext(ValidationContext)
   // const { additionalConfig } = useAdditionalComponentsStore()
   // const { additionalSection } = additionalConfig
@@ -82,24 +81,6 @@ const Header: React.FC = () => {
     }
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const match = window.matchMedia('(max-width: 768px)')
-
-      if (match.matches && scrollY > 200) {
-        setIsOnTop(false)
-      } else {
-        setIsOnTop(true)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    // Limpiar el event listener cuando el componente se desmonta
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <header
       className={` fixed z-50 flex min-h-20 md:min-h-24 w-full items-center justify-between bg-primary-dark  md:px-10 xl:px-4  2xl:px-10 top-0 transition-all duration-300 ease-in-out `}
@@ -111,22 +92,15 @@ const Header: React.FC = () => {
       >
         <Menu className="h-6 w-6 text-white" />
       </Button>
-      <div className="w-full pl-6 xl:w-fit lg:pl-0 flex justify-center items-center gap-4 xl:gap-0 ">
+      <div className="w-full xl:w-[200px] pl-6 lg:pl-0 flex justify-center items-center gap-4 xl:gap-0 ">
         <Logo />
         <Image
-          className=" mt-4"
+          className="xl:w-[40px] 2xl:w-[60px] mt-4"
           src="/images/brasil-flag.webp"
           alt="logo"
           width={60}
           height={42}
         />
-        {
-          pathname === '/' && isOnTop && null
-          // <div className="text-white text-sm md:text-md font-semibold md:hidden">
-          //   El mundo esta a <span className=" text-secondary ">un click </span>{' '}
-          //   de distancia
-          // </div>
-        }
       </div>
       <NavigationMenu className="hidden xl:flex ">
         <NavigationMenuList className="flex lg:gap-2 2xl:gap-4">
@@ -135,7 +109,7 @@ const Header: React.FC = () => {
               <div className="z-0 relative w-fit h-fit">
                 <Link
                   href={href || '#'}
-                  className={` ${title === 'Inicio' && ' hidden 2xl:flex '}  
+                  className={` ${title === dictionary['Home'] && ' hidden 2xl:flex '}  
                   ${title === dictionary['Subscribe'] && ' bg-secondary '}  
                   ${href === '/destinations-of-the-month' ? ' text-neutral-800 bg-neutral-300 ' : ' text-white bg-primary-light/50 '} z-20 relative group inline-flex w-max items-center justify-center rounded-full px-4 py-1 text-sm lg:text-[12px] xl:text-sm font-light fill-white hover:bg-primary transition-all duration-300 ease-in-out`}
                   prefetch

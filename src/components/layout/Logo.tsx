@@ -9,7 +9,7 @@ type LogoProps = {
 }
 
 export const Logo: React.FC<LogoProps> = ({
-  className = 'h-16 w-[150px] lg:w-[200px] ',
+  className = 'h-16 w-[150px] 2xl:w-[200px] ',
 }) => {
   return (
     <div className="flex items-center py-2 ">
