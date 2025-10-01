@@ -8,6 +8,8 @@ import { Pagination } from '@/components/pagination/Pagination'
 import { SectionBanner } from '@/components/SectionBanner'
 import { ContentVideoItem } from '@/components/content/ContentVideoItem'
 
+import dictionary from '@/dictionary/lang.json'
+
 const Loading = dynamic(() => import('@/components/Loading'), {
   ssr: false,
 })
@@ -73,7 +75,7 @@ export const ContentVideoPosts: React.FC<Props> = ({ category, url = '' }) => {
         </div>
       ) : (
         <div className="text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary['No content available']}
         </div>
       )}
     </div>

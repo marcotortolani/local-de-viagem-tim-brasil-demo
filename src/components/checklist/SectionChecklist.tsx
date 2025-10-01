@@ -14,6 +14,8 @@ import {
 import { Separator } from '../ui/separator'
 import { CATEGORIES, CHECKLIST_TAGS } from '@/lib/constants'
 
+import dictionary from '@/dictionary/lang.json'
+
 type Props = {
   parentSlug?: string
 }
@@ -100,7 +102,7 @@ export const SectionChecklist: React.FC<Props> = ({ parentSlug = '' }) => {
         </div>
       ) : (
         <div className="w-4/5 max-w-[300px] mx-auto text-black text-center bg-white py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary['No content available']}
         </div>
       )}
     </div>
@@ -115,37 +117,37 @@ export const SectionChecklist: React.FC<Props> = ({ parentSlug = '' }) => {
           style={{ scrollbarWidth: 'none' }}
         >
           <TooltipProvider delayDuration={100}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <button
-                    type="button"
-                    onClick={() => setTagsSelected([])}
-                    className=" relative group hover:scale-105 active:scale-100 transition-all duration-200 ease-in-out"
-                  >
-                    <SlidersHorizontalIcon className="w-6 h-6 stroke-quaternary group-hover:opacity-80 transition-all duration-200 ease-in-out" />
-                  </button>
-                </TooltipTrigger>
-                <TooltipContent
-                  sideOffset={4}
-                  className=" bg-white text-neutral-600 font-oswald text-sm"
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  type="button"
+                  onClick={() => setTagsSelected([])}
+                  className=" relative group hover:scale-105 active:scale-100 transition-all duration-200 ease-in-out"
                 >
-                  <p>Limpiar Filtros</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            {CHECKLIST_TAGS.map((tag) => (
-              <button
-                key={tag.slug}
-                className={` px-4 md:px-4 lg:px-6 pb-0.5 font-oswald text-base xl:text-xl text-nowrap lowercase border-2 border-white rounded-full transition-all duration-200 ease-in-out ${
-                  tagsSelected.includes(tag.id)
-                    ? 'bg-white text-neutral-500 hover:bg-white/60'
-                    : 'bg-transparent text-quaternary hover:bg-white/40 hover:text-quaternary/80'
-                }`}
-                onClick={() => handleTagSelected({ tagSelected: tag.id })}
+                  <SlidersHorizontalIcon className="w-6 h-6 stroke-quaternary group-hover:opacity-80 transition-all duration-200 ease-in-out" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent
+                sideOffset={4}
+                className=" bg-white text-neutral-600 font-oswald text-sm"
               >
-                #{tag.name}
-              </button>
-            ))}
+                <p>{dictionary['Clear Filters']}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          {CHECKLIST_TAGS.map((tag) => (
+            <button
+              key={tag.slug}
+              className={` px-4 md:px-4 lg:px-6 pb-0.5 font-oswald text-base xl:text-xl text-nowrap lowercase border-2 border-white rounded-full transition-all duration-200 ease-in-out ${
+                tagsSelected.includes(tag.id)
+                  ? 'bg-white text-neutral-500 hover:bg-white/60'
+                  : 'bg-transparent text-quaternary hover:bg-white/40 hover:text-quaternary/80'
+              }`}
+              onClick={() => handleTagSelected({ tagSelected: tag.id })}
+            >
+              #{tag.name}
+            </button>
+          ))}
           {/* <div className="w-full flex items-center jus gap-2">
             <TooltipProvider delayDuration={100}>
               <Tooltip>

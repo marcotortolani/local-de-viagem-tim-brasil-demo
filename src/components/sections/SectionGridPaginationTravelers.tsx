@@ -1,15 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Category, Post } from '@/lib/api/wp/wp-types'
-// import dynamic from 'next/dynamic'
 import { getWpPosts } from '@/lib/api/wp/wp-actions'
 import { Container } from '@/components/Container'
 import { Pagination } from '@/components/pagination/Pagination'
 import { VerticalCard } from '@/components/VerticalCard'
 
-// const Loading = dynamic(() => import('@/components/Loading'), {
-//   ssr: false,
-// })
+import dictionary from '@/dictionary/lang.json'
 
 type Props = {
   category: Category
@@ -58,7 +55,6 @@ export const SectionGridPaginationTravelers: React.FC<Props> = ({
       {posts.length ? (
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 ">
           {posts.map((item, key) => (
-            // <TravelerItem item={item} key={key} category={category} />
             <VerticalCard
               item={item}
               key={key}
@@ -68,7 +64,7 @@ export const SectionGridPaginationTravelers: React.FC<Props> = ({
         </div>
       ) : (
         <div className="w-4/5 max-w-[300px] mx-auto text-black text-center bg-[#666666] py-4 rounded-xl ">
-          No tienes contenido disponible
+          {dictionary['No content available']}
         </div>
       )}
     </div>
