@@ -75,6 +75,9 @@ const config: Config = {
         poppins: ['var(--font-poppins)', 'sans-serif'],
         oswald: ['var(--font-oswald)', 'sans-serif'],
         "sign-painter": ['SignPainter', 'sans-serif'],
+      },
+      screens: {
+        "3xl": "1700px",
       }
     },
   },

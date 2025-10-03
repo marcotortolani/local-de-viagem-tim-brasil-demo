@@ -11,12 +11,14 @@ import { TravelerItemsCarousel } from './TravelerItemsCarousel'
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from 'lucide-react'
 
 type TravelerCarouselSectionProps = {
+  parentSlug: string
   items: Category[]
   pagination?: boolean
   navigation?: boolean
 }
 
 export const TravelerCarousel: React.FC<TravelerCarouselSectionProps> = ({
+  parentSlug,
   items = [],
   pagination,
   navigation,
@@ -71,7 +73,7 @@ export const TravelerCarousel: React.FC<TravelerCarouselSectionProps> = ({
 
       {items.map((category, index) => (
         <SwiperSlide key={index} className="h-full ">
-          <TravelerItemsCarousel category={category} />
+          <TravelerItemsCarousel category={category} parentSlug={parentSlug} />
         </SwiperSlide>
       ))}
       {navigation && (

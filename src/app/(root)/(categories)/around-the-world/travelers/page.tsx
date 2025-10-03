@@ -27,17 +27,17 @@ export default async function Page() {
           <div className="z-20 relative w-full max-w-screen-xl mx-auto h-full lg:h-fit md:pb-4  flex flex-col items-center justify-end xl:flex-row lg:items-center xl:justify-center gap-2 md:gap-4 xl:gap-8 ">
             <h2 className=" flex items-end lg:items-center  gap-2 ">
               <span className=" font-sign-painter text-4xl md:text-5xl xl:text-6xl font-light text-tertiary">
-                {dictionary['Ours']}
+                {dictionary['Travelers']}
               </span>{' '}
               <span className=" mb-2 italic font-normal font-oswald text-4xl lg:text-5xl xl:text-6xl text-white">
-                {dictionary['Travelers']}
+                {dictionary['Around the World']}
               </span>
             </h2>
             <div className="z-10 relative w-[95%] sm:max-w-md md:max-w-screen-md 2xl:max-w-2xl px-4 py-3 md:px-8 md:py-4 lg:px-10 xl:px-12 bg-black/50 rounded-2xl md:rounded-3xl">
               <p className=" font-oswald italic text-white text-base md:text-xl lg:text-2xl font-extralight">
                 {
                   dictionary[
-                    'Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.'
+                    'Meet our travelers, join them on their journeys, and discover the most fascinating places around the world alongside them.'
                   ]
                 }
               </p>
@@ -55,8 +55,8 @@ export default async function Page() {
 
       <div className="w-full bg-gradient-to-b from-primary-dark to-primary-light">
         <SectionTravelersPagination
-          parentSlug="inspired-by"
-          travelersType="local"
+          parentSlug="around-the-world"
+          travelersType="international"
         />
       </div>
     </main>

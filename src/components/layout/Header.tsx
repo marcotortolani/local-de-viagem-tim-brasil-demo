@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { RouteItem } from '@/lib/route/route-types'
 import { useLayoutSidebarStore } from '@/components/layout/layout-store'
-import { Heart, Menu } from 'lucide-react'
+import { Heart, Menu, Plane } from 'lucide-react'
 import { SearchIcon } from '@/components/icons'
 
 import dictionary from '@/dictionary/lang.json'
@@ -51,6 +51,10 @@ const Header: React.FC = () => {
       href: '/checklist',
     },
     {
+      Icon: Plane,
+      href: '/travelers',
+    },
+    {
       title: dictionary['Shorts'],
       href: '/shorts',
     },
@@ -83,7 +87,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={` fixed z-50 flex min-h-20 md:min-h-24 w-full items-center justify-between bg-primary-dark  md:px-10 xl:px-4  2xl:px-10 top-0 transition-all duration-300 ease-in-out `}
+      className={` fixed z-50 flex min-h-20 md:min-h-24 w-full items-center justify-between bg-primary-dark  md:px-10 xl:px-4 3xl:px-10 top-0 transition-all duration-300 ease-in-out `}
     >
       <Button
         size="icon"
@@ -95,7 +99,7 @@ const Header: React.FC = () => {
       <div className="w-full xl:w-[200px] pl-6 lg:pl-0 flex justify-center items-center gap-4 xl:gap-0 ">
         <Logo />
         <Image
-          className="xl:w-[40px] 2xl:w-[60px] mt-4"
+          className="xl:hidden 2xl:flex xl:w-[40px] 2xl:w-[40px] 3xl:w-[60px] mt-4"
           src="/images/brasil-flag.webp"
           alt="logo"
           width={60}

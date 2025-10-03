@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 //import { SectionRegions } from '@/components/inspired-by/SectionRegions'
 import { SectionLandscapes } from '@/components/inspired-by/SectionLandscapes'
-import { SectionTravelers } from '@/components/inspired-by/SectionTravelers'
+import { SectionTravelersSlider } from '@/components/inspired-by/SectionTravelersSlider'
 import { SectionItineraries } from '@/components/inspired-by/SectionItineraries'
 
 import dictionary from '@/dictionary/lang.json'
@@ -86,7 +86,7 @@ export default async function Page() {
 
       {/* <SectionRegions parentSlug="inspired-by" /> */}
       <SectionLandscapes parentSlug="inspired-by" />
-      <SectionTravelers />
+      <SectionTravelersSlider parentSlug="inspired-by" travelersType="local" />
       <SectionItineraries parentSlug="inspired-by" />
     </main>
   )

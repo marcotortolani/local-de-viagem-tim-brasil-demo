@@ -85,6 +85,7 @@
   "Itineraries":"Itineraries",
   "Ours":"Ours",
   "Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.": "Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.",
+  "Meet our travelers, join them on their journeys, and discover the most fascinating places around the world alongside them.":"Meet our travelers, join them on their journeys, and discover the most fascinating places around the world alongside them.",
   "Content not found": "Content not found",
   "Back to Home":"Back to Home",
   "Attraction":"Attraction",
@@ -110,5 +111,11 @@
   "videos":"videos",
   "editorial":"editorial",
   "editoriales":"editorials",
-  "travelers":"travelers"
+  "travelers":"travelers",
+  "Local Travelers":"Local Travelers",
+  "International Travelers":"International Travelers",
+  "Local":"Local",
+  "International":"International",
+  "Local(pl)":"Local",
+  "International(pl)":"International"
 }

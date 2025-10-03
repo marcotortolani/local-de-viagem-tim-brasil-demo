@@ -84,7 +84,8 @@
   "Landscapes":"Paisajes",
   "Itineraries":"Itinerarios",
   "Ours":"Nuestros",
-  "Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.":"Conozca a nuestros travelers, acompañalos en sus travesías, y descubre junto a ellos lugares mágicos de nuestro hermoso país.",
+  "Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.":"Conozca a nuestros viajeros, acompañalos en sus travesías, y descubre junto a ellos lugares mágicos de nuestro hermoso país.",
+  "Meet our travelers, join them on their journeys, and discover the most fascinating places around the world alongside them.":"Conoce a nuestros viajeros, únete a sus travesías y descubre junto a ellos los lugares más fascinantes de todo el mundo.",
   "Content not found":"Contenido no encontrado",
   "Back to Home":"Volver al inicio",
   "Attraction":"Atracción",
@@ -110,5 +111,11 @@
   "videos":"videos",
   "editorial":"editorial",
   "editoriales":"editoriales",
-  "travelers":"viajeros"
+  "travelers":"viajeros",
+  "Local Travelers":"Viajeros Locales",
+  "International Travelers":"Viajeros Internacionales",
+  "Local":"Local",
+  "International":"Internacional",
+  "Local(pl)":"Locales",
+  "International(pl)":"Internacionales"
 }

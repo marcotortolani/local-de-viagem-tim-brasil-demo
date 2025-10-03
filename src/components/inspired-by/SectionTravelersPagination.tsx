@@ -9,21 +9,32 @@ import Default from '/public/images/default.webp'
 import { Separator } from '../ui/separator'
 import { CATEGORIES } from '@/lib/constants'
 import { FeaturedTravelersCarousel } from './FeaturedTravelersCarousel'
+import { htmlToText } from 'html-to-text'
 
 import dictionary from '@/dictionary/lang.json'
 
 type Props = {
-  parentSlug?: string
+  parentSlug: string
+  travelersType?: 'local' | 'international' | undefined
 }
 
 const PER_PAGE = 12
 
-export const SectionTravelers2: React.FC<Props> = () => {
+export const SectionTravelersPagination: React.FC<Props> = ({
+  parentSlug,
+  travelersType = undefined,
+}) => {
   const [loading, setLoading] = useState(true)
   const [pages, setPages] = useState<number>(0)
   const [currentPage, setCurrentPage] = useState<number>(0)
   const [featuredTravelers, setFeaturedTravelers] = useState<Category[]>([])
   const [travelers, settravelers] = useState<Category[]>([])
+
+  const travelersParent = !travelersType
+    ? CATEGORIES['travelers']
+    : travelersType === 'local'
+      ? CATEGORIES['local-travelers']
+      : CATEGORIES['international-travelers']
 
   useEffect(() => {
     setLoading(true)
@@ -31,7 +42,7 @@ export const SectionTravelers2: React.FC<Props> = () => {
     if (!featuredTravelers.length) {
       const getFeaturedTravelers = async () => {
         const { categories } = await getWpCategories({
-          parent: CATEGORIES['travelers'],
+          parent: travelersParent,
           per_page: 100,
         })
 
@@ -45,7 +56,7 @@ export const SectionTravelers2: React.FC<Props> = () => {
 
     const getCategories = async () => {
       const { categories, totalPages } = await getWpCategories({
-        parent: CATEGORIES['travelers'],
+        parent: travelersParent,
         per_page: PER_PAGE,
         page: currentPage + 1,
       })
@@ -70,7 +81,7 @@ export const SectionTravelers2: React.FC<Props> = () => {
       {travelers?.length ? (
         <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-5 xl:gap-8">
           {travelers.map((item, key) => (
-            <TravelerItem category={item} key={key} />
+            <TravelerItem parentSlug={parentSlug} category={item} key={key} />
           ))}
         </div>
       ) : (
@@ -107,11 +118,20 @@ export const SectionTravelers2: React.FC<Props> = () => {
   )
 }
 
-const TravelerItem = ({ category }: { category: Category }) => {
+const TravelerItem = ({
+  parentSlug,
+  category,
+}: {
+  parentSlug: string
+  category: Category
+}) => {
   const name = category?.name?.replaceAll('-', ' ')
 
+  const sectionSlug =
+    parentSlug === 'travelers' ? 'travelers' : `${parentSlug}/travelers`
+
   return (
-    <Link href={`/inspired-by/travelers/${category?.slug}`} prefetch>
+    <Link href={`/${sectionSlug}/${category?.slug}`} prefetch>
       <div className="w-full h-full flex flex-col items-center gap-2">
         <div
           className={`relative w-full aspect-square overflow-hidden border-2 xl:border-4 border-solid border-white rounded-full `}
@@ -129,7 +149,7 @@ const TravelerItem = ({ category }: { category: Category }) => {
         </div>
         <div className="z-20 relative w-5/6 bg-white1 rounded-md">
           <h5 className="  text-white text-lg md:text-xl lg:text-2xl xl:text-3xl text-wrap line-clamp-2 leading-[auto] font-oswald tracking-wide text-center">
-            {name}
+            {htmlToText(name || '')}
           </h5>
         </div>
       </div>

@@ -85,6 +85,7 @@
   "Itineraries": "Roteiros",
   "Ours": "Nossos",
   "Meet our travelers, follow their adventures, and discover the magical corners of our beautiful country with them.": "Conheça nossos viajantes, acompanhe-os em suas jornadas e descubra com eles lugares mágicos do nosso lindo país.",
+  "Meet our travelers, join them on their journeys, and discover the most fascinating places around the world alongside them.":"Conheça nossos viajantes, junte-se às suas jornadas e descubra com eles os lugares mais fascinantes do mundo.",
   "Content not found": "Conteúdo não encontrado",
   "Back to Home": "Voltar ao início",
   "Attraction":"Atração",
@@ -110,7 +111,11 @@
   "videos":"videos",
   "editorial":"editorial",
   "editoriales":"editoriais",
-  "travelers":"viajantes"
-  
-  
+  "travelers":"viajantes",
+  "Local Travelers": "Viajantes Locais",
+  "International Travelers": "Viajantes Internacionais",
+  "Local": "Local",
+  "International": "Internacional",
+  "Local(pl)": "Locais",
+  "International(pl)": "Internacionais"  
 }

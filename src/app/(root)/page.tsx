@@ -21,7 +21,7 @@ export default async function Page() {
   })
 
   const travelers = categories.filter(
-    (category: Category) => category.parent === CATEGORIES['travelers'],
+    (category: Category) => category.parent === CATEGORIES['local-travelers'],
   )
 
   const shorts = await getWpPosts({

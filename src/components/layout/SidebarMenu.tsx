@@ -40,6 +40,10 @@ export default function SidebarMenu(): React.ReactNode {
       href: '/checklist',
     },
     {
+      title: dictionary['Travelers'],
+      href: '/travelers',
+    },
+    {
       title: dictionary['Destinations of the Month'],
       href: '/destinations-of-the-month',
     },

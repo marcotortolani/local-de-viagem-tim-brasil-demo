@@ -15,5 +15,5 @@ export default async function Page({ params }: { params: PageProps }) {
 
   if (!category) notFound()
 
-  return <TravelerPosts parentSlug="inspired-by" category={category} />
+  return <TravelerPosts parentSlug="travelers" category={category} />
 }

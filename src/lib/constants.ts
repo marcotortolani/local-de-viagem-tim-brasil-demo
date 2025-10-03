@@ -25,6 +25,8 @@ export const CATEGORIES = {
   'inspired-by': 24, // Cat
   itineraries: 114, // Sub Cat
   travelers: 21, // Sub Cat
+  'local-travelers': 161,
+  'international-travelers': 162,
   'around-the-world': 20, // Cat
   destinations: 26, // Sub Cat
   'traveling-the-world': 25, // Sub Cat

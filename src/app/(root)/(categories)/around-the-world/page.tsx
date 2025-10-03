@@ -5,6 +5,7 @@ import { SectionTravelingTheWorld } from '@/components/around-the-world/SectionT
 import Breadcrumb from '@/components/ui/Breadcrumb'
 
 import dictionary from '@/dictionary/lang.json'
+import { SectionTravelersSlider } from '@/components/inspired-by/SectionTravelersSlider'
 
 export default async function Page() {
   return (
@@ -64,6 +65,10 @@ export default async function Page() {
       </section>
 
       <SectionDestinations parentSlug="around-the-world" />
+      <SectionTravelersSlider
+        parentSlug="around-the-world"
+        travelersType="international"
+      />
       <SectionTravelingTheWorld parentSlug="around-the-world" />
     </main>
   )

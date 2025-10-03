@@ -12,14 +12,18 @@ import { htmlToText } from 'html-to-text'
 import dictionary from '@/dictionary/lang.json'
 
 type Props = {
+  parentSlug: string
   category: Category
   url?: string
 }
 
 const PER_PAGE = 12
 
-export const TravelerPosts: React.FC<Props> = ({ category }) => {
+export const TravelerPosts: React.FC<Props> = ({ parentSlug, category }) => {
   const [posts, setPosts] = useState<Post[]>([])
+
+  const sectionSlug =
+    parentSlug === 'travelers' ? 'travelers' : `${parentSlug}/travelers`
 
   useEffect(() => {
     const getPosts = async () => {
@@ -47,10 +51,7 @@ export const TravelerPosts: React.FC<Props> = ({ category }) => {
         name={htmlToText(category?.name || '')}
       />
       <Container className=" px-0 lg:px-6 xl:px-3 min-h-fit">
-        <SectionGridPagination
-          category={category}
-          parentSlug={`inspired-by/travelers`}
-        />
+        <SectionGridPagination category={category} parentSlug={sectionSlug} />
       </Container>
     </main>
   )

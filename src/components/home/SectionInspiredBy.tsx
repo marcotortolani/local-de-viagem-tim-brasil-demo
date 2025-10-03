@@ -107,7 +107,7 @@ export function SectionInspiredBy({
               {dictionary['Meet the']}
             </span>{' '}
             <span className=" mb-2 italic font-light font-oswald text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">
-              {dictionary['Travelers']}
+              {dictionary['Local Travelers']}
             </span>
           </h2>
           <SeeMore
@@ -117,7 +117,11 @@ export function SectionInspiredBy({
           />
         </div>
 
-        <TravelerCarousel items={travelers} pagination={true} />
+        <TravelerCarousel
+          parentSlug={'inspired-by'}
+          items={travelers}
+          pagination={true}
+        />
       </div>
     </section>
   )

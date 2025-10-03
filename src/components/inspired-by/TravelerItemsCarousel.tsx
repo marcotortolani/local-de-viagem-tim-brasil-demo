@@ -7,16 +7,18 @@ import Default from '/public/images/default.webp'
 import { htmlToText } from 'html-to-text'
 
 type TravelerItemsCarouselProps = {
+  parentSlug: string
   category: Category
 }
 
 export const TravelerItemsCarousel: React.FC<TravelerItemsCarouselProps> = ({
+  parentSlug,
   category,
 }) => {
   const name = category?.name?.replaceAll('-', ' ')
 
   return (
-    <Link href={`/inspired-by/travelers/${category?.slug}`} prefetch>
+    <Link href={`/${parentSlug}/travelers/${category?.slug}`} prefetch>
       <div className="w-full h-full flex flex-col items-center gap-2">
         <div
           className={`relative w-full aspect-square overflow-hidden border-2 xl:border-4 border-solid border-white rounded-full `}

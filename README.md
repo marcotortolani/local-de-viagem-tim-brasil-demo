@@ -44,6 +44,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
   Se cambian imagenes para regionalizar
   Se modifican logos y banderas para Brasil
   Se arregla la falla de la fuente agregando otros font type para la font Sign Painter
+  Se agregan sub categorias de viajeros locales e internacionales
 
 - v1.4.3:
   Se modifica la sección Viajeros con nuevo diseño
