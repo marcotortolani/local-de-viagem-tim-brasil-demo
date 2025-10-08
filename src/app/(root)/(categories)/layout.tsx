@@ -3,15 +3,15 @@
 import React from 'react'
 import { TrialProvider } from '@/providers/trial-provider'
 
-// Descomentar para permitir uso libre en TEST
-const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
+// Trial deshabilitado
+// const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
+const operatorCountry = 'test'
 
 export default function TrialLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // Descomentar para permitir uso libre en TEST
   if (operatorCountry === 'test') return <>{children}</>
 
   return <TrialProvider>{children}</TrialProvider>

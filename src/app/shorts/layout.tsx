@@ -2,7 +2,9 @@ import React from 'react'
 import { Layout } from '@/components/short/layout/Layout'
 import { TrialProvider } from '@/providers/trial-provider'
 
-const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
+// Trial deshabilitado
+// const operatorCountry = process.env.NEXT_PUBLIC_OPERATOR_COUNTRY
+const operatorCountry = 'test'
 
 export default function RootLayout({
   children,

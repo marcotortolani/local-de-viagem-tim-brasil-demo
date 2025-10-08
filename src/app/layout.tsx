@@ -10,7 +10,6 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './globals.css'
 import { ValidationProvider } from '@/providers/validation-provider'
-//import GoogleAnalyticsLoader from '@/components/GoogleAnalyticsLoader'
 
 import dictionary from '@/dictionary/lang.json'
 
@@ -46,9 +45,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={dictionary['lang']}>
-      {/* <head>
-        <GoogleAnalyticsLoader />
-      </head> */}
       <body className={`${poppins.variable} ${oswald.variable} font-sans`}>
         <ValidationProvider>{children}</ValidationProvider>
       </body>

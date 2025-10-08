@@ -10,8 +10,6 @@ import SidebarMenu from './SidebarMenu'
 
 import { useAdditionalComponentsStore } from '@/lib/modules/additional-components/additional-components-store'
 
-// import SideNavBar from './SideNavBar'
-
 type LayoutProps = {
   children: React.ReactNode
 }
@@ -45,7 +43,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      {/* <SideNavBar /> */}
       <main className=" relative w-full pb-[3rem] md:pb-0  ">{children}</main>
       <Chatbot />
       <Footer />

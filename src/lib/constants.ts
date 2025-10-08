@@ -46,29 +46,8 @@ export const GRID_VIDEOS = {
   'culture-and-flavor': 'https://vimeo.com/1122292816',
   'around-the-world': 'https://vimeo.com/1122292695',
   landscapes: 'https://vimeo.com/1122292577',
-  // 'itineraries-venezuela':
-  //   'https://vimeo.com/1122292742',
-  //'promotional-venezuela': 'https://vimeo.com/1102290426',
 }
-// export const GRID_VIDEOS = {
-//   destinations:
-//     'https://player.vimeo.com/progressive_redirect/playback/1122287148/rendition/1080p/file.mp4?loc=external&log_user=0&signature=ef277726cf6a1855fdb972a0d367f4b97280ddf92c0a9f9b714264bddf9e2118',
-//   itineraries:
-//     'https://player.vimeo.com/progressive_redirect/playback/1122287191/rendition/1080p/file.mp4?loc=external&log_user=0&signature=6715bae5ec9d4b3fafe50b48d96eb0dbd4cec0b164ec25a35a817bd052d1599b',
-//   checklist:
-//     'https://player.vimeo.com/progressive_redirect/playback/1122292840/rendition/720p/file.mp4?loc=external&log_user=0&signature=03ba443a5c8574fcebab5b243aab017ee8e3d232e7dab96c4357975d22ece931',
-//   'behind-the-map':
-//     'https://player.vimeo.com/progressive_redirect/playback/1122292798/rendition/540p/file.mp4?loc=external&log_user=0&signature=27c94aeef028a40afe0c6e58929a89aa9c4321dc87a560f7bf3c5fd654358c66',
-//   'culture-and-flavor':
-//     'https://player.vimeo.com/progressive_redirect/playback/1122292816/rendition/720p/file.mp4?loc=external&log_user=0&signature=11ca49867141bd6b243e0c98dff1156c95a7c3f7b4cf7cd71ddfcbc1982c70f3',
-//   'around-the-world':
-//     'https://player.vimeo.com/progressive_redirect/playback/1122292695/rendition/720p/file.mp4?loc=external&log_user=0&signature=08b57915ec8d1b47d1b7ab4e96d58cccc2520f4810b8fdc94b4c7b2e7175b0ce',
-//   landscapes:
-//     'https://player.vimeo.com/progressive_redirect/playback/1122292577/rendition/1080p/file.mp4?loc=external&log_user=0&signature=4b221d8f48234bf19f2d5beea234eaba4f43019dcc21ea6c8d41217cffe9c19d',
-//   // 'itineraries-venezuela':
-//   //   'https://player.vimeo.com/progressive_redirect/playback/1122292742/rendition/1080p/file.mp4?loc=external&log_user=0&signature=fb4b63772c29b1c58332bd64ba4a256a3b6182488065cf2d402fc1856a3a1bc6',
-//   // 'promotional-venezuela': 'https://player.vimeo.com/progressive_redirect/playback/1102290426/rendition/1080p/file.mp4?loc=external&log_user=0&signature=895f1d2460cf0b5bb2c4ff17bf223049562e96799de0f4cd582f688c63077251',
-// }
+
 
 export const REGION_TAGS = [
   { id: 143, name: 'Canaima', slug: 'canaima', color: QUATERNARY_COLOR },
